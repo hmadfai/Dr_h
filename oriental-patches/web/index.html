@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oriental Patches — Kronos · Nord Stage 4 · Montage</title>
+    <meta
+      name="description"
+      content="Browse oriental and Middle Eastern sound patches for Korg Kronos, Nord Stage 4, and Yamaha Montage. Filter by keyboard, issue date, and subtype."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="glow glow-a"></div>
+      <div class="glow glow-b"></div>
+      <div class="grain"></div>
+    </div>
+
+    <header class="hero">
+      <div class="hero-media" role="img" aria-label="Stage keyboard and synthesizer atmosphere"></div>
+      <p class="brand">Oriental Patches</p>
+      <h1>Middle Eastern sounds for three stage keyboards</h1>
+      <p class="lede">
+        A living catalog of oriental patches for Korg Kronos, Nord Stage 4, and
+        Yamaha Montage — refreshed weekly.
+      </p>
+      <div class="cta-row">
+        <a class="cta" href="#catalog">Browse catalog</a>
+        <p class="meta" id="updated-meta">Loading catalog…</p>
+      </div>
+    </header>
+
+    <main id="catalog" class="catalog">
+      <section class="filters" aria-label="Catalog filters">
+        <div class="filter-field">
+          <label for="filter-keyboard">Keyboard</label>
+          <select id="filter-keyboard">
+            <option value="">All keyboards</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="filter-subtype">Subtype</label>
+          <select id="filter-subtype">
+            <option value="">All subtypes</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="filter-date-from">Issued from</label>
+          <input type="date" id="filter-date-from" />
+        </div>
+        <div class="filter-field">
+          <label for="filter-date-to">Issued to</label>
+          <input type="date" id="filter-date-to" />
+        </div>
+        <div class="filter-field grow">
+          <label for="filter-search">Search</label>
+          <input
+            type="search"
+            id="filter-search"
+            placeholder="Title, vendor, tags…"
+            autocomplete="off"
+          />
+        </div>
+        <button type="button" class="reset" id="reset-filters">Reset</button>
+      </section>
+
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+
+      <div class="table-wrap">
+        <table class="patch-table">
+          <thead>
+            <tr>
+              <th data-sort="title">Patch</th>
+              <th data-sort="keyboard">Keyboard</th>
+              <th data-sort="subtype">Subtype</th>
+              <th data-sort="issued_on">Issued</th>
+              <th data-sort="vendor">Vendor</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody id="patch-rows"></tbody>
+        </table>
+        <p class="empty" id="empty-state" hidden>No patches match these filters.</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Data lives in <code>oriental-patches/data/patches.json</code>. A weekly
+        agent searches for new oriental patches and merges updates here.
+      </p>
+    </footer>
+
+    <script src="assets/app.js" type="module"></script>
+  </body>
+</html>
