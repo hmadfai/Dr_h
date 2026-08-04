@@ -100,11 +100,13 @@
         const inA = isInAcca(f.id, 'A');
         const inB = isInAcca(f.id, 'B');
         const inv = f.status === 'invalidated' || f.status === 'rescheduled';
+        const unverified = f.status === 'unverified';
         let cls = '';
         if (inv) cls = 'invalidated';
+        else if (unverified) cls = 'unverified';
         else if (inA) cls = 'selected-a';
         else if (inB) cls = 'selected-b';
-        const flag = inv ? '⚠ ' : inA ? 'A · ' : inB ? 'B · ' : '';
+        const flag = inv ? '⚠ ' : unverified ? '? ' : inA ? 'A · ' : inB ? 'B · ' : '';
         return `<tr class="${cls}" data-id="${f.id}" title="Click to add to Acca ${state.pickTarget}">
           <td>${leagueChip(f.leagueCode)}</td>
           <td>${f.round}</td>
@@ -138,25 +140,33 @@
 
   function buildLeg(fixture, which) {
     const family = which === 'B' ? '1x2_only' : defaultFamilyForA(state.accaA.length);
-    const opts = window.AICCA_MARKETS.selections[family] || window.AICCA_MARKETS.selections.match_odds;
-    const pick = opts[fixture.round % opts.length];
-    const edge = window.AICCA_EDGES.edgeFor(fixture, which === 'B' ? '1x2_only' : family);
-    // Acca B: force HIGH only
-    const confidence = which === 'B' ? 'HIGH' : edge.confidence;
-    return {
-      fixtureId: fixture.id,
-      match: fixture.match,
-      league: fixture.league,
-      date: fixture.date,
-      family,
-      market: pick.market,
-      selection: pick.selection,
-      odds: pick.odds,
-      venue: pick.venue,
-      confidence,
-      optaEdge: edge.optaEdge,
-      supporting: edge.supporting
-    };
+    let leg;
+    if (window.AICCA_ANALYSIS?.suggestLeg) {
+      leg = window.AICCA_ANALYSIS.suggestLeg(fixture, family, { forceHigh: which === 'B' });
+      if (window.AICCA_ODDS_LIVE?.applyToLeg) {
+        leg = window.AICCA_ODDS_LIVE.applyToLeg(leg, fixture);
+      }
+    } else {
+      const opts = window.AICCA_MARKETS.selections[family] || window.AICCA_MARKETS.selections.match_odds;
+      const pick = opts[fixture.round % opts.length];
+      const edge = window.AICCA_EDGES.edgeFor(fixture, which === 'B' ? '1x2_only' : family);
+      leg = {
+        fixtureId: fixture.id,
+        match: fixture.match,
+        league: fixture.league,
+        date: fixture.date,
+        family,
+        market: pick.market,
+        selection: pick.selection,
+        odds: pick.odds,
+        venue: pick.venue,
+        confidence: which === 'B' ? 'HIGH' : edge.confidence,
+        optaEdge: edge.optaEdge,
+        supporting: edge.supporting
+      };
+    }
+    if (which === 'B') leg.confidence = 'HIGH';
+    return leg;
   }
 
   function onFixtureClick(id) {
@@ -197,8 +207,14 @@
   function updateLeg(which, idx, patch) {
     const list = which === 'A' ? state.accaA : state.accaB;
     const leg = list[idx];
+    const fx = findFixture(leg.fixtureId);
     Object.assign(leg, patch);
-    if (patch.family) {
+    if (patch.family && fx && window.AICCA_ANALYSIS?.suggestLeg) {
+      const rebuilt = window.AICCA_ANALYSIS.suggestLeg(fx, patch.family, { forceHigh: which === 'B' });
+      Object.assign(leg, rebuilt);
+      if (window.AICCA_ODDS_LIVE?.applyToLeg) window.AICCA_ODDS_LIVE.applyToLeg(leg, fx);
+      if (which === 'B') leg.confidence = 'HIGH';
+    } else if (patch.family) {
       const opts = window.AICCA_MARKETS.selections[patch.family];
       if (opts && opts.length) {
         const o = opts[0];
@@ -206,13 +222,6 @@
         leg.selection = o.selection;
         leg.odds = o.odds;
         leg.venue = o.venue;
-      }
-      const fx = findFixture(leg.fixtureId);
-      if (fx) {
-        const edge = window.AICCA_EDGES.edgeFor(fx, patch.family);
-        leg.optaEdge = edge.optaEdge;
-        leg.supporting = edge.supporting;
-        if (which === 'A') leg.confidence = edge.confidence;
       }
     }
     if (patch.selectionKey) {
@@ -491,64 +500,49 @@
       toast('Select a round to refresh.');
       return;
     }
-    setRefreshStatus('checking', `Validating ${league} round ${round} against schedule sources…`);
+    setRefreshStatus('checking', `Validating ${league} round ${round} via ESPN + TheSportsDB…`);
     $('#btn-refresh').disabled = true;
 
-    // Simulated multi-source check (PL API / EFL / Opta / ESPN / Sky)
-    await new Promise((r) => setTimeout(r, 900 + Math.random() * 700));
-
-    const targets = state.fixtures.filter((f) => {
-      const leagueOk =
-        league === 'ALL' ||
-        f.leagueCode === league ||
-        (league === 'PL' && f.leagueCode === 'PL') ||
-        (league === 'CH' && f.leagueCode === 'CH') ||
-        (league === 'L1' && f.leagueCode === 'L1') ||
-        (league === 'L2' && f.leagueCode === 'L2');
-      return leagueOk && f.round === round;
-    });
-
-    let updates = 0;
-    const now = new Date().toISOString();
-    targets.forEach((f, i) => {
-      // Deterministic light simulation: occasionally flag TV/weather shift
-      const hash = (f.id.charCodeAt(0) + f.round * 17 + i) % 47;
-      if (hash === 0) {
-        f.status = 'rescheduled';
-        f.dateWarning = 'Possible TV reschedule — verify kickoff';
-        updates++;
-      } else if (hash === 1) {
-        f.status = 'invalidated';
-        f.dateWarning = 'Weather/postponement risk flagged';
-        updates++;
-      } else {
-        f.status = 'scheduled';
-        f.dateWarning = null;
-      }
-      f.lastValidated = now;
-    });
-
-    state.lastValidatedAt = now;
-    state.validationCache[`${league}-${round}`] = { at: now, updates, count: targets.length };
-    localStorage.setItem('aicca_validation_cache', JSON.stringify(state.validationCache));
-    localStorage.setItem('aicca_last_validated', now);
-
-    $('#btn-refresh').disabled = false;
-    if (updates) {
-      setRefreshStatus(
-        'updates',
-        `${updates} discrepancy(ies) in ${targets.length} fixtures · Last updated: ${new Date(now).toLocaleString()}`
-      );
-      toast(`Refresh complete: ${updates} updates found.`);
-    } else {
-      setRefreshStatus(
-        'valid',
-        `All ${targets.length} fixtures valid · Last updated: ${new Date(now).toLocaleString()}`
-      );
-      toast(`Round ${round} validated — no changes.`);
+    let report;
+    try {
+      if (!window.AICCA_REFRESH?.validateRound) throw new Error('Refresh module missing');
+      report = await window.AICCA_REFRESH.validateRound(state.fixtures, {
+        leagueCode: league,
+        round,
+        onProgress: (p) => {
+          setRefreshStatus(
+            'checking',
+            `${p.phase}${p.league ? ' · ' + p.league : ''}${p.date ? ' · ' + p.date : ''} (${p.step}/${p.totalSteps})`
+          );
+        }
+      });
+    } catch (err) {
+      $('#btn-refresh').disabled = false;
+      setRefreshStatus('idle', `Refresh failed: ${err.message || err}`);
+      toast('Live refresh failed — see status line.');
+      return;
     }
 
-    // Drop invalidated selections
+    state.lastValidatedAt = report.validatedAt;
+    state.validationCache[`${league}-${round}`] = report;
+    localStorage.setItem('aicca_validation_cache', JSON.stringify(state.validationCache));
+    localStorage.setItem('aicca_last_validated', report.validatedAt);
+
+    $('#btn-refresh').disabled = false;
+    const src = (report.sourcesUsed || []).join(', ') || 'none';
+    const detail = `matched ${report.matched}/${report.targets} · updates ${report.updates} · missing ${report.missing} · live rows ${report.liveCount} · sources: ${src} · ${new Date(report.validatedAt).toLocaleString()}`;
+
+    if (report.updates || report.missing) {
+      setRefreshStatus('updates', detail);
+      toast(`Refresh: ${report.updates} updates, ${report.missing} unverified.`);
+    } else if (report.errors?.length && report.liveCount === 0) {
+      setRefreshStatus('idle', `Sources blocked/unreachable — matrix unchanged. ${detail}`);
+      toast('Live APIs unreachable from this network; fixtures retained.');
+    } else {
+      setRefreshStatus('valid', detail);
+      toast(`Round ${round} validated against live schedules.`);
+    }
+
     const before = state.accaA.length + state.accaB.length;
     state.accaA = state.accaA.filter((l) => findFixture(l.fixtureId)?.status !== 'invalidated');
     state.accaB = state.accaB.filter((l) => findFixture(l.fixtureId)?.status !== 'invalidated');
@@ -698,7 +692,6 @@
   }
 
   function seedDemoAccas() {
-    // Pick diverse fixtures for a valid demo if empty
     if (state.accaA.length || state.accaB.length) return;
     const byLeague = {
       PL: state.fixtures.filter((f) => f.leagueCode === 'PL' && f.round === 1),
@@ -709,25 +702,33 @@
     const pickA = [byLeague.PL[0], byLeague.CH[0], byLeague.L1[0], byLeague.L2[0], byLeague.PL[1], byLeague.CH[1]].filter(Boolean);
     const families = ['match_odds', 'goals', 'player', 'corners', 'cards', 'half_time'];
     pickA.forEach((f, i) => {
-      const leg = buildLeg(f, 'A');
+      let leg = window.AICCA_ANALYSIS
+        ? window.AICCA_ANALYSIS.suggestLeg(f, families[i], { forceHigh: i < 5 })
+        : buildLeg(f, 'A');
+      if (window.AICCA_ODDS_LIVE?.applyToLeg) leg = window.AICCA_ODDS_LIVE.applyToLeg(leg, f);
       leg.family = families[i];
-      const opts = window.AICCA_MARKETS.selections[leg.family];
-      const o = opts[0];
-      leg.market = o.market;
-      leg.selection = o.selection;
-      leg.odds = o.odds;
-      leg.venue = o.venue;
-      leg.confidence = i === 5 ? 'MEDIUM' : 'HIGH';
-      // Boost odds on last legs to clear 5/1
-      if (i >= 4) leg.odds = '6/4';
+      if (i < 5) leg.confidence = 'HIGH';
+      // Ensure combined odds clear 5/1 floor for demo
+      const dec = window.AICCA_ODDS.parseFraction(leg.odds) || 1.5;
+      if (dec < 1.35) {
+        leg.odds = '6/4';
+        leg.decimal = 2.5;
+      }
       state.accaA.push(leg);
     });
 
     const pickB = [byLeague.PL[2], byLeague.CH[2], byLeague.L1[1], byLeague.L2[1], byLeague.PL[3]].filter(Boolean);
-    pickB.forEach((f, i) => {
-      const leg = buildLeg(f, 'B');
-      leg.odds = i < 2 ? '11/10' : '6/4';
+    pickB.forEach((f) => {
+      let leg = window.AICCA_ANALYSIS
+        ? window.AICCA_ANALYSIS.suggestLeg(f, '1x2_only', { forceHigh: true })
+        : buildLeg(f, 'B');
+      if (window.AICCA_ODDS_LIVE?.applyToLeg) leg = window.AICCA_ODDS_LIVE.applyToLeg(leg, f);
       leg.confidence = 'HIGH';
+      const dec = window.AICCA_ODDS.parseFraction(leg.odds) || 1.5;
+      if (dec < 1.4) {
+        leg.odds = '6/4';
+        leg.decimal = 2.5;
+      }
       state.accaB.push(leg);
     });
   }
@@ -850,7 +851,7 @@
       }, 400);
     }
 
-    $('#boot-stats').textContent = `${state.fixtures.length.toLocaleString()} fixtures loaded · 2026-27`;
+    $('#boot-stats').textContent = `${state.fixtures.length.toLocaleString()} fixtures · ${(window.AICCA_TEAM_STATS?.meta?.teamCount || Object.keys(window.AICCA_TEAM_STATS?.teams || {}).length || 0)} team profiles · 2026-27`;
   }
 
   document.addEventListener('DOMContentLoaded', init);

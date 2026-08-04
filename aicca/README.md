@@ -4,40 +4,37 @@ West Ham–themed interactive GUI for dual-accumulator construction across **Pre
 
 ## Quick start
 
-Open locally (no build step):
-
 ```bash
 cd aicca
 python3 -m http.server 8080
-# then visit http://localhost:8080
+# visit http://localhost:8080
 ```
 
-Or open `aicca/index.html` directly in a browser.
+## Wired data sources
+
+| Layer | Source | Role |
+|-------|--------|------|
+| Fixtures | Preloaded 2026-27 matrix | Full season selection |
+| Live refresh | **ESPN** scoreboard + **TheSportsDB** events | Date/venue/status validation |
+| Team metrics | **football-data.co.uk** 2025-26 (+24/25 fallback) | xG proxy, PPDA proxy, corners, cards, form, BTTS |
+| Exchange odds | Betfair closing columns (`BFE*`) | Blend with model 1X2 prices |
+| Players | TheSportsDB rosters + role model | Anytime / card-risk legs |
+| Optional live odds | The Odds API | Set `window.AICCA_ODDS_API_KEY` |
+
+Rebuild stats:
+
+```bash
+python3 aicca/scripts/build_team_stats.py
+```
 
 ## Features
 
 - **Fixture panel** — searchable / sortable matrix of all 2,036 fixtures
-- **Acca A** — comprehensive Betfair families (Match Odds, Goals, Player, Corners, Cards, Half-Time; Scorecast optional), 5–7 legs, ≥5/1, ≥60% HIGH
-- **Acca B** — 1X2 only, 4–5 legs, 100% HIGH, ≥5/1
-- **Validation** — no shared fixtures, odds floor, market-family coverage, correlation guard (cards+corners)
-- **Refresh Fixtures** — round-level validation status (Checking / Valid / Updates Found)
-- **Output modal** — side-by-side brief with Opta edges, risk flags, PDF/print export
-
-## Data
-
-| League | Fixtures |
-|--------|----------|
-| Premier League | 380 |
-| Championship | 552 |
-| League One | 552 |
-| League Two | 552 |
-| **Total** | **2,036** |
-
-Regenerate from CSVs:
-
-```bash
-python3 aicca/scripts/generate_fixtures.py
-```
+- **Acca A** — comprehensive Betfair families (5–7 legs, ≥5/1, ≥60% HIGH)
+- **Acca B** — 1X2 only (4–5 legs, 100% HIGH, ≥5/1)
+- **Metric-driven legs** — selections priced from home/away xG, PPDA, corners, cards, HT rates
+- **Live Refresh** — ESPN + TheSportsDB round validation with status pills
+- **Output modal** — Opta-proxy edges, risk flags, PDF/print
 
 ## Branding
 

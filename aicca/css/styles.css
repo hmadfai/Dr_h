@@ -368,6 +368,10 @@ table.fixtures tr.invalidated {
   opacity: 0.7;
 }
 
+table.fixtures tr.unverified {
+  background: rgba(27,177,231,0.1);
+}
+
 table.fixtures tr.invalidated td:first-child::after {
   content: ' ⚠';
   color: var(--warn);

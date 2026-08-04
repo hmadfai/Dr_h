@@ -143,11 +143,27 @@ window.AICCA_ODDS = {
   toFraction(decimal) {
     if (!decimal || decimal < 1) return '—';
     const profit = decimal - 1;
-    // For large combined prices, prefer clean X/1 style
-    if (profit >= 20) {
-      return `${Math.round(profit)}/1`;
+    if (profit >= 20) return `${Math.round(profit)}/1`;
+    // Prefer common UK betting fractions
+    const commons = [
+      [1, 5], [2, 9], [1, 4], [2, 7], [1, 3], [4, 11], [2, 5], [4, 9],
+      [1, 2], [8, 15], [4, 7], [8, 13], [4, 6], [8, 11], [4, 5], [5, 6],
+      [10, 11], [1, 1], [6, 5], [5, 4], [11, 8], [6, 4], [8, 5], [13, 8],
+      [7, 4], [9, 5], [15, 8], [2, 1], [9, 4], [5, 2], [11, 4], [3, 1],
+      [10, 3], [4, 1], [9, 2], [5, 1], [11, 2], [6, 1], [7, 1], [8, 1], [10, 1], [12, 1], [16, 1], [20, 1]
+    ];
+    let best = commons[0];
+    let bestErr = Infinity;
+    for (const [n, d] of commons) {
+      const err = Math.abs(profit - n / d);
+      if (err < bestErr) {
+        bestErr = err;
+        best = [n, d];
+      }
     }
-    let bestN = 1, bestD = 1, bestErr = Infinity;
+    if (bestErr <= 0.06) return `${best[0]}/${best[1]}`;
+    let bestN = 1, bestD = 1;
+    bestErr = Infinity;
     for (let d = 1; d <= 40; d++) {
       const n = Math.round(profit * d);
       const err = Math.abs(profit - n / d);
@@ -158,7 +174,6 @@ window.AICCA_ODDS = {
       }
     }
     if (bestN === 0) return '1/100';
-    // reduce
     const g = (a, b) => (b ? g(b, a % b) : a);
     const d0 = g(bestN, bestD);
     return `${bestN / d0}/${bestD / d0}`;
