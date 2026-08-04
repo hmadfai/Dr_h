@@ -1,0 +1,553 @@
+round,date,home,away
+1,2026-08-14,Wolverhampton Wanderers,Blackburn Rovers
+1,2026-08-15,Bolton Wanderers,Preston North End
+1,2026-08-15,Bristol City,Millwall
+1,2026-08-15,Charlton Athletic,Derby County
+1,2026-08-15,Middlesbrough,Lincoln City
+1,2026-08-15,Norwich City,West Bromwich Albion
+1,2026-08-15,Portsmouth,Queens Park Rangers
+1,2026-08-15,Stoke City,Swansea City
+1,2026-08-15,Sheffield United,Birmingham City
+1,2026-08-16,Watford,Southampton
+1,2026-08-16,Burnley,West Ham United
+1,2026-08-17,Cardiff City,Wrexham
+2,2026-08-22,Birmingham City,Bristol City
+2,2026-08-22,Lincoln City,Portsmouth
+2,2026-08-22,Millwall,Norwich City
+2,2026-08-22,Blackburn Rovers,Middlesbrough
+2,2026-08-22,Derby County,Cardiff City
+2,2026-08-22,Preston North End,Wolverhampton Wanderers
+2,2026-08-22,Queens Park Rangers,Bolton Wanderers
+2,2026-08-22,Southampton,Stoke City
+2,2026-08-22,Swansea City,Sheffield United
+2,2026-08-22,West Ham United,Charlton Athletic
+2,2026-08-22,Wrexham,Watford
+2,2026-08-23,West Bromwich Albion,Burnley
+3,2026-08-28,Wrexham,Birmingham City
+3,2026-08-29,Derby County,Swansea City
+3,2026-08-29,Middlesbrough,West Bromwich Albion
+3,2026-08-29,Wolverhampton Wanderers,Stoke City
+3,2026-08-29,Blackburn Rovers,Queens Park Rangers
+3,2026-08-29,Bolton Wanderers,Lincoln City
+3,2026-08-29,Bristol City,Portsmouth
+3,2026-08-29,Cardiff City,Sheffield United
+3,2026-08-29,Charlton Athletic,Preston North End
+3,2026-08-29,Norwich City,Burnley
+3,2026-08-29,Southampton,Millwall
+3,2026-08-29,Watford,West Ham United
+4,2026-09-01,Birmingham City,Southampton
+4,2026-09-01,Lincoln City,Blackburn Rovers
+4,2026-09-01,Portsmouth,Derby County
+4,2026-09-01,Preston North End,Bristol City
+4,2026-09-01,Sheffield United,Bolton Wanderers
+4,2026-09-01,Swansea City,Watford
+4,2026-09-01,West Ham United,Wolverhampton Wanderers
+4,2026-09-01,Stoke City,Norwich City
+4,2026-09-02,Millwall,Wrexham
+4,2026-09-02,Queens Park Rangers,Cardiff City
+4,2026-09-02,West Bromwich Albion,Charlton Athletic
+4,2026-09-02,Burnley,Middlesbrough
+5,2026-09-05,Lincoln City,Southampton
+5,2026-09-05,Preston North End,Blackburn Rovers
+5,2026-09-05,Stoke City,Charlton Athletic
+5,2026-09-05,Burnley,Bristol City
+5,2026-09-05,Millwall,Bolton Wanderers
+5,2026-09-05,Portsmouth,Cardiff City
+5,2026-09-05,Queens Park Rangers,Middlesbrough
+5,2026-09-05,Sheffield United,Norwich City
+5,2026-09-05,West Bromwich Albion,Watford
+5,2026-09-05,West Ham United,Derby County
+5,2026-09-05,Swansea City,Wrexham
+5,2026-09-06,Birmingham City,Wolverhampton Wanderers
+6,2026-09-08,Blackburn Rovers,Sheffield United
+6,2026-09-08,Bristol City,Lincoln City
+6,2026-09-08,Cardiff City,Stoke City
+6,2026-09-08,Middlesbrough,Millwall
+6,2026-09-08,Southampton,Swansea City
+6,2026-09-08,Watford,Preston North End
+6,2026-09-08,Wrexham,Burnley
+6,2026-09-08,Bolton Wanderers,West Ham United
+6,2026-09-09,Wolverhampton Wanderers,Portsmouth
+6,2026-09-09,Derby County,West Bromwich Albion
+6,2026-09-09,Norwich City,Birmingham City
+6,2026-09-09,Charlton Athletic,Queens Park Rangers
+7,2026-09-11,West Ham United,Wrexham
+7,2026-09-12,Bolton Wanderers,Cardiff City
+7,2026-09-12,Derby County,Birmingham City
+7,2026-09-12,West Bromwich Albion,Queens Park Rangers
+7,2026-09-12,Blackburn Rovers,Millwall
+7,2026-09-12,Charlton Athletic,Portsmouth
+7,2026-09-12,Middlesbrough,Norwich City
+7,2026-09-12,Preston North End,Lincoln City
+7,2026-09-12,Southampton,Bristol City
+7,2026-09-12,Swansea City,Burnley
+7,2026-09-12,Watford,Stoke City
+7,2026-09-13,Sheffield United,Wolverhampton Wanderers
+8,2026-09-18,Bristol City,Watford
+8,2026-09-19,Cardiff City,Charlton Athletic
+8,2026-09-19,Millwall,West Ham United
+8,2026-09-19,Stoke City,Sheffield United
+8,2026-09-19,Birmingham City,Middlesbrough
+8,2026-09-19,Burnley,Derby County
+8,2026-09-19,Lincoln City,Swansea City
+8,2026-09-19,Norwich City,Bolton Wanderers
+8,2026-09-19,Portsmouth,Blackburn Rovers
+8,2026-09-19,Queens Park Rangers,Preston North End
+8,2026-09-19,Wrexham,Southampton
+8,2026-09-20,Wolverhampton Wanderers,West Bromwich Albion
+9,2026-10-09,West Ham United,Queens Park Rangers
+9,2026-10-10,Charlton Athletic,Bristol City
+9,2026-10-10,Swansea City,Norwich City
+9,2026-10-10,West Bromwich Albion,Birmingham City
+9,2026-10-10,Blackburn Rovers,Cardiff City
+9,2026-10-10,Bolton Wanderers,Stoke City
+9,2026-10-10,Derby County,Wrexham
+9,2026-10-10,Middlesbrough,Wolverhampton Wanderers
+9,2026-10-10,Preston North End,Millwall
+9,2026-10-10,Sheffield United,Lincoln City
+9,2026-10-10,Watford,Burnley
+9,2026-10-11,Southampton,Portsmouth
+10,2026-10-13,Birmingham City,Preston North End
+10,2026-10-13,Bristol City,Blackburn Rovers
+10,2026-10-13,Burnley,Charlton Athletic
+10,2026-10-13,Cardiff City,Watford
+10,2026-10-13,Millwall,Swansea City
+10,2026-10-13,Wolverhampton Wanderers,Bolton Wanderers
+10,2026-10-13,Wrexham,West Bromwich Albion
+10,2026-10-13,Stoke City,Middlesbrough
+10,2026-10-14,Norwich City,Southampton
+10,2026-10-14,Portsmouth,Sheffield United
+10,2026-10-14,Queens Park Rangers,Derby County
+10,2026-10-14,Lincoln City,West Ham United
+11,2026-10-16,Burnley,Wolverhampton Wanderers
+11,2026-10-17,Middlesbrough,Cardiff City
+11,2026-10-17,Millwall,Lincoln City
+11,2026-10-17,Watford,Charlton Athletic
+11,2026-10-17,Birmingham City,Queens Park Rangers
+11,2026-10-17,Bristol City,Sheffield United
+11,2026-10-17,Derby County,Stoke City
+11,2026-10-17,Norwich City,Portsmouth
+11,2026-10-17,Southampton,Bolton Wanderers
+11,2026-10-17,Swansea City,West Ham United
+11,2026-10-17,West Bromwich Albion,Blackburn Rovers
+11,2026-10-17,Wrexham,Preston North End
+12,2026-10-23,Bolton Wanderers,Middlesbrough
+12,2026-10-24,Charlton Athletic,Norwich City
+12,2026-10-24,Portsmouth,Millwall
+12,2026-10-24,Sheffield United,Derby County
+12,2026-10-24,Blackburn Rovers,Wrexham
+12,2026-10-24,Cardiff City,Birmingham City
+12,2026-10-24,Lincoln City,Burnley
+12,2026-10-24,Preston North End,West Bromwich Albion
+12,2026-10-24,Queens Park Rangers,Swansea City
+12,2026-10-24,Stoke City,Bristol City
+12,2026-10-24,West Ham United,Southampton
+12,2026-10-24,Wolverhampton Wanderers,Watford
+13,2026-10-30,Sheffield United,Wrexham
+13,2026-10-31,Lincoln City,Birmingham City
+13,2026-10-31,Norwich City,Watford
+13,2026-10-31,Stoke City,Preston North End
+13,2026-10-31,Bolton Wanderers,Bristol City
+13,2026-10-31,Burnley,Portsmouth
+13,2026-10-31,Middlesbrough,Charlton Athletic
+13,2026-10-31,Millwall,Derby County
+13,2026-10-31,Southampton,Queens Park Rangers
+13,2026-10-31,Swansea City,Blackburn Rovers
+13,2026-10-31,West Ham United,West Bromwich Albion
+13,2026-10-31,Wolverhampton Wanderers,Cardiff City
+14,2026-11-03,Birmingham City,Millwall
+14,2026-11-03,Blackburn Rovers,Stoke City
+14,2026-11-03,Derby County,Norwich City
+14,2026-11-03,Portsmouth,Swansea City
+14,2026-11-03,Preston North End,Sheffield United
+14,2026-11-03,Queens Park Rangers,Burnley
+14,2026-11-03,Watford,Lincoln City
+14,2026-11-03,Charlton Athletic,Bolton Wanderers
+14,2026-11-03,West Bromwich Albion,Southampton
+14,2026-11-04,Cardiff City,West Ham United
+14,2026-11-04,Wrexham,Middlesbrough
+14,2026-11-04,Bristol City,Wolverhampton Wanderers
+15,2026-11-06,Derby County,Bolton Wanderers
+15,2026-11-07,Bristol City,Norwich City
+15,2026-11-07,Portsmouth,Stoke City
+15,2026-11-07,Wrexham,Wolverhampton Wanderers
+15,2026-11-07,Birmingham City,Swansea City
+15,2026-11-07,Blackburn Rovers,West Ham United
+15,2026-11-07,Cardiff City,Burnley
+15,2026-11-07,Charlton Athletic,Sheffield United
+15,2026-11-07,Preston North End,Southampton
+15,2026-11-07,Queens Park Rangers,Lincoln City
+15,2026-11-07,Watford,Middlesbrough
+15,2026-11-07,West Bromwich Albion,Millwall
+16,2026-11-21,Millwall,Queens Park Rangers
+16,2026-11-21,Norwich City,Cardiff City
+16,2026-11-21,Southampton,Derby County
+16,2026-11-21,Bolton Wanderers,Portsmouth
+16,2026-11-21,Lincoln City,Wrexham
+16,2026-11-21,Middlesbrough,Bristol City
+16,2026-11-21,Sheffield United,Watford
+16,2026-11-21,Stoke City,Birmingham City
+16,2026-11-21,Swansea City,West Bromwich Albion
+16,2026-11-21,West Ham United,Preston North End
+16,2026-11-21,Wolverhampton Wanderers,Charlton Athletic
+16,2026-11-22,Burnley,Blackburn Rovers
+17,2026-11-24,Bristol City,Wrexham
+17,2026-11-24,Cardiff City,Preston North End
+17,2026-11-24,Charlton Athletic,Lincoln City
+17,2026-11-24,Middlesbrough,Swansea City
+17,2026-11-24,Norwich City,Queens Park Rangers
+17,2026-11-24,Portsmouth,West Ham United
+17,2026-11-24,Sheffield United,Southampton
+17,2026-11-24,Wolverhampton Wanderers,Derby County
+17,2026-11-25,Bolton Wanderers,West Bromwich Albion
+17,2026-11-25,Burnley,Birmingham City
+17,2026-11-25,Watford,Blackburn Rovers
+17,2026-11-25,Stoke City,Millwall
+18,2026-11-27,Southampton,Middlesbrough
+18,2026-11-28,Blackburn Rovers,Charlton Athletic
+18,2026-11-28,Lincoln City,Wolverhampton Wanderers
+18,2026-11-28,Preston North End,Norwich City
+18,2026-11-28,Birmingham City,Bolton Wanderers
+18,2026-11-28,Derby County,Watford
+18,2026-11-28,Millwall,Burnley
+18,2026-11-28,Queens Park Rangers,Sheffield United
+18,2026-11-28,West Bromwich Albion,Bristol City
+18,2026-11-28,West Ham United,Stoke City
+18,2026-11-28,Wrexham,Portsmouth
+18,2026-11-29,Swansea City,Cardiff City
+19,2026-12-04,Sheffield United,West Ham United
+19,2026-12-05,Bolton Wanderers,Blackburn Rovers
+19,2026-12-05,Bristol City,Swansea City
+19,2026-12-05,Middlesbrough,Derby County
+19,2026-12-05,Watford,Millwall
+19,2026-12-05,Cardiff City,Lincoln City
+19,2026-12-05,Charlton Athletic,Birmingham City
+19,2026-12-05,Norwich City,Wrexham
+19,2026-12-05,Portsmouth,West Bromwich Albion
+19,2026-12-05,Stoke City,Queens Park Rangers
+19,2026-12-05,Wolverhampton Wanderers,Southampton
+19,2026-12-06,Burnley,Preston North End
+20,2026-12-08,Birmingham City,Watford
+20,2026-12-08,Blackburn Rovers,Norwich City
+20,2026-12-08,Millwall,Sheffield United
+20,2026-12-08,Queens Park Rangers,Wolverhampton Wanderers
+20,2026-12-08,Swansea City,Bolton Wanderers
+20,2026-12-08,West Bromwich Albion,Cardiff City
+20,2026-12-08,Wrexham,Charlton Athletic
+20,2026-12-08,West Ham United,Middlesbrough
+20,2026-12-09,Derby County,Bristol City
+20,2026-12-09,Lincoln City,Stoke City
+20,2026-12-09,Preston North End,Portsmouth
+20,2026-12-09,Southampton,Burnley
+21,2026-12-11,Bolton Wanderers,Wrexham
+21,2026-12-12,Preston North End,Middlesbrough
+21,2026-12-12,Queens Park Rangers,Watford
+21,2026-12-12,Stoke City,West Bromwich Albion
+21,2026-12-12,Blackburn Rovers,Derby County
+21,2026-12-12,Cardiff City,Southampton
+21,2026-12-12,Charlton Athletic,Swansea City
+21,2026-12-12,Lincoln City,Norwich City
+21,2026-12-12,Portsmouth,Birmingham City
+21,2026-12-12,Sheffield United,Burnley
+21,2026-12-12,West Ham United,Bristol City
+21,2026-12-12,Wolverhampton Wanderers,Millwall
+22,2026-12-18,West Bromwich Albion,Sheffield United
+22,2026-12-19,Birmingham City,West Ham United
+22,2026-12-19,Bristol City,Cardiff City
+22,2026-12-19,Millwall,Charlton Athletic
+22,2026-12-19,Swansea City,Preston North End
+22,2026-12-19,Watford,Bolton Wanderers
+22,2026-12-19,Burnley,Stoke City
+22,2026-12-19,Derby County,Lincoln City
+22,2026-12-19,Middlesbrough,Portsmouth
+22,2026-12-19,Norwich City,Wolverhampton Wanderers
+22,2026-12-19,Southampton,Blackburn Rovers
+22,2026-12-19,Wrexham,Queens Park Rangers
+23,2026-12-26,Bolton Wanderers,Burnley
+23,2026-12-26,Sheffield United,Middlesbrough
+23,2026-12-26,Blackburn Rovers,Birmingham City
+23,2026-12-26,Cardiff City,Millwall
+23,2026-12-26,Charlton Athletic,Southampton
+23,2026-12-26,Lincoln City,West Bromwich Albion
+23,2026-12-26,Portsmouth,Watford
+23,2026-12-26,Preston North End,Derby County
+23,2026-12-26,Queens Park Rangers,Bristol City
+23,2026-12-26,Stoke City,Wrexham
+23,2026-12-26,West Ham United,Norwich City
+23,2026-12-26,Wolverhampton Wanderers,Swansea City
+24,2026-12-29,Wrexham,Blackburn Rovers
+24,2026-12-29,Birmingham City,Cardiff City
+24,2026-12-29,Bristol City,Stoke City
+24,2026-12-29,Burnley,Lincoln City
+24,2026-12-29,Derby County,Sheffield United
+24,2026-12-29,Middlesbrough,Bolton Wanderers
+24,2026-12-29,Millwall,Portsmouth
+24,2026-12-29,Norwich City,Charlton Athletic
+24,2026-12-29,Swansea City,Queens Park Rangers
+24,2026-12-29,Watford,Wolverhampton Wanderers
+24,2026-12-29,West Bromwich Albion,Preston North End
+24,2026-12-29,Southampton,West Ham United
+25,2027-01-01,Millwall,Wolverhampton Wanderers
+25,2027-01-01,Birmingham City,Portsmouth
+25,2027-01-01,Bristol City,West Ham United
+25,2027-01-01,Derby County,Blackburn Rovers
+25,2027-01-01,Middlesbrough,Preston North End
+25,2027-01-01,Norwich City,Lincoln City
+25,2027-01-01,Southampton,Cardiff City
+25,2027-01-01,Swansea City,Charlton Athletic
+25,2027-01-01,Watford,Queens Park Rangers
+25,2027-01-01,West Bromwich Albion,Stoke City
+25,2027-01-01,Wrexham,Bolton Wanderers
+25,2027-01-01,Burnley,Sheffield United
+26,2027-01-16,Blackburn Rovers,West Bromwich Albion
+26,2027-01-16,Bolton Wanderers,Southampton
+26,2027-01-16,Cardiff City,Middlesbrough
+26,2027-01-16,Charlton Athletic,Watford
+26,2027-01-16,Lincoln City,Millwall
+26,2027-01-16,Portsmouth,Norwich City
+26,2027-01-16,Preston North End,Wrexham
+26,2027-01-16,Queens Park Rangers,Birmingham City
+26,2027-01-16,Sheffield United,Bristol City
+26,2027-01-16,Stoke City,Derby County
+26,2027-01-16,West Ham United,Swansea City
+26,2027-01-16,Wolverhampton Wanderers,Burnley
+27,2027-01-23,Birmingham City,Lincoln City
+27,2027-01-23,Blackburn Rovers,Swansea City
+27,2027-01-23,Bristol City,Bolton Wanderers
+27,2027-01-23,Cardiff City,Wolverhampton Wanderers
+27,2027-01-23,Charlton Athletic,Middlesbrough
+27,2027-01-23,Derby County,Millwall
+27,2027-01-23,Portsmouth,Burnley
+27,2027-01-23,Preston North End,Stoke City
+27,2027-01-23,Queens Park Rangers,Southampton
+27,2027-01-23,Watford,Norwich City
+27,2027-01-23,West Bromwich Albion,West Ham United
+27,2027-01-23,Wrexham,Sheffield United
+28,2027-01-26,Bolton Wanderers,Charlton Athletic
+28,2027-01-26,Burnley,Queens Park Rangers
+28,2027-01-26,Lincoln City,Watford
+28,2027-01-26,Millwall,Birmingham City
+28,2027-01-26,Norwich City,Derby County
+28,2027-01-26,Sheffield United,Preston North End
+28,2027-01-26,Southampton,West Bromwich Albion
+28,2027-01-26,Stoke City,Blackburn Rovers
+28,2027-01-27,Middlesbrough,Wrexham
+28,2027-01-27,Swansea City,Portsmouth
+28,2027-01-27,West Ham United,Cardiff City
+28,2027-01-27,Wolverhampton Wanderers,Bristol City
+29,2027-01-30,Bolton Wanderers,Derby County
+29,2027-01-30,Burnley,Cardiff City
+29,2027-01-30,Lincoln City,Queens Park Rangers
+29,2027-01-30,Middlesbrough,Watford
+29,2027-01-30,Millwall,West Bromwich Albion
+29,2027-01-30,Norwich City,Bristol City
+29,2027-01-30,Sheffield United,Charlton Athletic
+29,2027-01-30,Southampton,Preston North End
+29,2027-01-30,Stoke City,Portsmouth
+29,2027-01-30,Swansea City,Birmingham City
+29,2027-01-30,West Ham United,Blackburn Rovers
+29,2027-01-30,Wolverhampton Wanderers,Wrexham
+30,2027-02-06,Birmingham City,Stoke City
+30,2027-02-06,Blackburn Rovers,Burnley
+30,2027-02-06,Bristol City,Middlesbrough
+30,2027-02-06,Cardiff City,Norwich City
+30,2027-02-06,Charlton Athletic,Wolverhampton Wanderers
+30,2027-02-06,Derby County,Southampton
+30,2027-02-06,Portsmouth,Bolton Wanderers
+30,2027-02-06,Preston North End,West Ham United
+30,2027-02-06,Queens Park Rangers,Millwall
+30,2027-02-06,Watford,Sheffield United
+30,2027-02-06,West Bromwich Albion,Swansea City
+30,2027-02-06,Wrexham,Lincoln City
+31,2027-02-13,Birmingham City,Derby County
+31,2027-02-13,Bristol City,Southampton
+31,2027-02-13,Burnley,Swansea City
+31,2027-02-13,Cardiff City,Bolton Wanderers
+31,2027-02-13,Lincoln City,Preston North End
+31,2027-02-13,Millwall,Blackburn Rovers
+31,2027-02-13,Norwich City,Middlesbrough
+31,2027-02-13,Portsmouth,Charlton Athletic
+31,2027-02-13,Queens Park Rangers,West Bromwich Albion
+31,2027-02-13,Stoke City,Watford
+31,2027-02-13,Wolverhampton Wanderers,Sheffield United
+31,2027-02-13,Wrexham,West Ham United
+32,2027-02-16,Blackburn Rovers,Bristol City
+32,2027-02-16,Charlton Athletic,Burnley
+32,2027-02-16,Derby County,Queens Park Rangers
+32,2027-02-16,Preston North End,Birmingham City
+32,2027-02-16,Sheffield United,Portsmouth
+32,2027-02-16,Watford,Cardiff City
+32,2027-02-16,West Bromwich Albion,Wrexham
+32,2027-02-16,West Ham United,Lincoln City
+32,2027-02-17,Bolton Wanderers,Wolverhampton Wanderers
+32,2027-02-17,Middlesbrough,Stoke City
+32,2027-02-17,Southampton,Norwich City
+32,2027-02-17,Swansea City,Millwall
+33,2027-02-20,Blackburn Rovers,Portsmouth
+33,2027-02-20,Bolton Wanderers,Norwich City
+33,2027-02-20,Charlton Athletic,Cardiff City
+33,2027-02-20,Derby County,Burnley
+33,2027-02-20,Middlesbrough,Birmingham City
+33,2027-02-20,Preston North End,Queens Park Rangers
+33,2027-02-20,Sheffield United,Stoke City
+33,2027-02-20,Southampton,Wrexham
+33,2027-02-20,Swansea City,Lincoln City
+33,2027-02-20,Watford,Bristol City
+33,2027-02-20,West Bromwich Albion,Wolverhampton Wanderers
+33,2027-02-21,West Ham United,Millwall
+34,2027-02-27,Birmingham City,West Bromwich Albion
+34,2027-02-27,Bristol City,Charlton Athletic
+34,2027-02-27,Burnley,Watford
+34,2027-02-27,Cardiff City,Blackburn Rovers
+34,2027-02-27,Lincoln City,Sheffield United
+34,2027-02-27,Millwall,Preston North End
+34,2027-02-27,Norwich City,Swansea City
+34,2027-02-27,Queens Park Rangers,West Ham United
+34,2027-02-27,Stoke City,Bolton Wanderers
+34,2027-02-27,Wolverhampton Wanderers,Middlesbrough
+34,2027-02-27,Wrexham,Derby County
+34,2027-02-28,Portsmouth,Southampton
+35,2027-03-02,Bolton Wanderers,Queens Park Rangers
+35,2027-03-02,Bristol City,Birmingham City
+35,2027-03-02,Burnley,West Bromwich Albion
+35,2027-03-02,Cardiff City,Derby County
+35,2027-03-02,Charlton Athletic,West Ham United
+35,2027-03-02,Middlesbrough,Blackburn Rovers
+35,2027-03-02,Norwich City,Millwall
+35,2027-03-02,Watford,Wrexham
+35,2027-03-03,Portsmouth,Lincoln City
+35,2027-03-03,Sheffield United,Swansea City
+35,2027-03-03,Stoke City,Southampton
+35,2027-03-03,Wolverhampton Wanderers,Preston North End
+36,2027-03-06,Birmingham City,Sheffield United
+36,2027-03-06,Blackburn Rovers,Wolverhampton Wanderers
+36,2027-03-06,Derby County,Charlton Athletic
+36,2027-03-06,Lincoln City,Middlesbrough
+36,2027-03-06,Millwall,Bristol City
+36,2027-03-06,Preston North End,Bolton Wanderers
+36,2027-03-06,Queens Park Rangers,Portsmouth
+36,2027-03-06,Southampton,Watford
+36,2027-03-06,Swansea City,Stoke City
+36,2027-03-06,West Bromwich Albion,Norwich City
+36,2027-03-06,West Ham United,Burnley
+36,2027-03-06,Wrexham,Cardiff City
+37,2027-03-13,Bolton Wanderers,Birmingham City
+37,2027-03-13,Bristol City,West Bromwich Albion
+37,2027-03-13,Burnley,Millwall
+37,2027-03-13,Cardiff City,Swansea City
+37,2027-03-13,Charlton Athletic,Blackburn Rovers
+37,2027-03-13,Middlesbrough,Southampton
+37,2027-03-13,Norwich City,Preston North End
+37,2027-03-13,Portsmouth,Wrexham
+37,2027-03-13,Sheffield United,Queens Park Rangers
+37,2027-03-13,Stoke City,West Ham United
+37,2027-03-13,Watford,Derby County
+37,2027-03-13,Wolverhampton Wanderers,Lincoln City
+38,2027-03-16,Derby County,Middlesbrough
+38,2027-03-16,Lincoln City,Cardiff City
+38,2027-03-16,Preston North End,Burnley
+38,2027-03-16,Queens Park Rangers,Stoke City
+38,2027-03-16,Southampton,Wolverhampton Wanderers
+38,2027-03-16,Swansea City,Bristol City
+38,2027-03-16,West Bromwich Albion,Portsmouth
+38,2027-03-16,Wrexham,Norwich City
+38,2027-03-17,Birmingham City,Charlton Athletic
+38,2027-03-17,Blackburn Rovers,Bolton Wanderers
+38,2027-03-17,Millwall,Watford
+38,2027-03-17,West Ham United,Sheffield United
+39,2027-03-20,Birmingham City,Blackburn Rovers
+39,2027-03-20,Bristol City,Queens Park Rangers
+39,2027-03-20,Burnley,Bolton Wanderers
+39,2027-03-20,Derby County,Preston North End
+39,2027-03-20,Middlesbrough,Sheffield United
+39,2027-03-20,Millwall,Cardiff City
+39,2027-03-20,Norwich City,West Ham United
+39,2027-03-20,Southampton,Charlton Athletic
+39,2027-03-20,Swansea City,Wolverhampton Wanderers
+39,2027-03-20,Watford,Portsmouth
+39,2027-03-20,West Bromwich Albion,Lincoln City
+39,2027-03-20,Wrexham,Stoke City
+40,2027-04-03,Charlton Athletic,Millwall
+40,2027-04-03,Blackburn Rovers,Southampton
+40,2027-04-03,Bolton Wanderers,Watford
+40,2027-04-03,Cardiff City,Bristol City
+40,2027-04-03,Lincoln City,Derby County
+40,2027-04-03,Portsmouth,Middlesbrough
+40,2027-04-03,Preston North End,Swansea City
+40,2027-04-03,Queens Park Rangers,Wrexham
+40,2027-04-03,Sheffield United,West Bromwich Albion
+40,2027-04-03,Stoke City,Burnley
+40,2027-04-03,West Ham United,Birmingham City
+40,2027-04-03,Wolverhampton Wanderers,Norwich City
+41,2027-04-06,Burnley,Wrexham
+41,2027-04-06,Lincoln City,Bristol City
+41,2027-04-06,Millwall,Middlesbrough
+41,2027-04-06,Portsmouth,Wolverhampton Wanderers
+41,2027-04-06,Queens Park Rangers,Charlton Athletic
+41,2027-04-06,Stoke City,Cardiff City
+41,2027-04-06,Swansea City,Southampton
+41,2027-04-06,West Ham United,Bolton Wanderers
+41,2027-04-07,Birmingham City,Norwich City
+41,2027-04-07,Preston North End,Watford
+41,2027-04-07,Sheffield United,Blackburn Rovers
+41,2027-04-07,West Bromwich Albion,Derby County
+42,2027-04-10,Blackburn Rovers,Preston North End
+42,2027-04-10,Bolton Wanderers,Millwall
+42,2027-04-10,Bristol City,Burnley
+42,2027-04-10,Cardiff City,Portsmouth
+42,2027-04-10,Charlton Athletic,Stoke City
+42,2027-04-10,Derby County,West Ham United
+42,2027-04-10,Middlesbrough,Queens Park Rangers
+42,2027-04-10,Norwich City,Sheffield United
+42,2027-04-10,Southampton,Lincoln City
+42,2027-04-10,Watford,West Bromwich Albion
+42,2027-04-10,Wolverhampton Wanderers,Birmingham City
+42,2027-04-10,Wrexham,Swansea City
+43,2027-04-17,Birmingham City,Wrexham
+43,2027-04-17,Burnley,Norwich City
+43,2027-04-17,Lincoln City,Bolton Wanderers
+43,2027-04-17,Millwall,Southampton
+43,2027-04-17,Portsmouth,Bristol City
+43,2027-04-17,Preston North End,Charlton Athletic
+43,2027-04-17,Queens Park Rangers,Blackburn Rovers
+43,2027-04-17,Sheffield United,Cardiff City
+43,2027-04-17,Stoke City,Wolverhampton Wanderers
+43,2027-04-17,Swansea City,Derby County
+43,2027-04-17,West Bromwich Albion,Middlesbrough
+43,2027-04-17,West Ham United,Watford
+44,2027-04-20,Bolton Wanderers,Sheffield United
+44,2027-04-20,Charlton Athletic,West Bromwich Albion
+44,2027-04-20,Derby County,Portsmouth
+44,2027-04-20,Middlesbrough,Burnley
+44,2027-04-20,Norwich City,Stoke City
+44,2027-04-20,Southampton,Birmingham City
+44,2027-04-20,Wolverhampton Wanderers,West Ham United
+44,2027-04-20,Wrexham,Millwall
+44,2027-04-21,Blackburn Rovers,Lincoln City
+44,2027-04-21,Bristol City,Preston North End
+44,2027-04-21,Cardiff City,Queens Park Rangers
+44,2027-04-21,Watford,Swansea City
+45,2027-04-24,Bolton Wanderers,Swansea City
+45,2027-04-24,Bristol City,Derby County
+45,2027-04-24,Burnley,Southampton
+45,2027-04-24,Cardiff City,West Bromwich Albion
+45,2027-04-24,Charlton Athletic,Wrexham
+45,2027-04-24,Middlesbrough,West Ham United
+45,2027-04-24,Norwich City,Blackburn Rovers
+45,2027-04-24,Portsmouth,Preston North End
+45,2027-04-24,Sheffield United,Millwall
+45,2027-04-24,Stoke City,Lincoln City
+45,2027-04-24,Watford,Birmingham City
+45,2027-04-24,Wolverhampton Wanderers,Queens Park Rangers
+46,2027-05-01,Birmingham City,Burnley
+46,2027-05-01,Blackburn Rovers,Watford
+46,2027-05-01,Derby County,Wolverhampton Wanderers
+46,2027-05-01,Lincoln City,Charlton Athletic
+46,2027-05-01,Millwall,Stoke City
+46,2027-05-01,Preston North End,Cardiff City
+46,2027-05-01,Queens Park Rangers,Norwich City
+46,2027-05-01,Southampton,Sheffield United
+46,2027-05-01,Swansea City,Middlesbrough
+46,2027-05-01,West Bromwich Albion,Bolton Wanderers
+46,2027-05-01,West Ham United,Portsmouth
+46,2027-05-01,Wrexham,Bristol City
