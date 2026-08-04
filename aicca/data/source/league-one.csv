@@ -1,0 +1,553 @@
+round,date,home,away
+1,2026-08-15,Notts County,Leicester City
+1,2026-08-15,Oxford United,MK Dons
+1,2026-08-15,Reading,Luton Town
+1,2026-08-15,Barnsley,Bromley
+1,2026-08-15,Blackpool,Wycombe Wanderers
+1,2026-08-15,Bradford City,Peterborough United
+1,2026-08-15,Burton Albion,Stevenage
+1,2026-08-15,Cambridge United,Wigan Athletic
+1,2026-08-15,Huddersfield Town,AFC Wimbledon
+1,2026-08-15,Leyton Orient,Sheffield Wednesday
+1,2026-08-15,Mansfield Town,Doncaster Rovers
+1,2026-08-15,Plymouth Argyle,Stockport County
+2,2026-08-20,Sheffield Wednesday,Bradford City
+2,2026-08-22,Doncaster Rovers,Barnsley
+2,2026-08-22,Luton Town,Notts County
+2,2026-08-22,AFC Wimbledon,Reading
+2,2026-08-22,Bromley,Cambridge United
+2,2026-08-22,Leicester City,Burton Albion
+2,2026-08-22,MK Dons,Huddersfield Town
+2,2026-08-22,Peterborough United,Mansfield Town
+2,2026-08-22,Stevenage,Oxford United
+2,2026-08-22,Stockport County,Blackpool
+2,2026-08-22,Wigan Athletic,Leyton Orient
+2,2026-08-22,Wycombe Wanderers,Plymouth Argyle
+3,2026-08-29,Blackpool,Peterborough United
+3,2026-08-29,MK Dons,Leicester City
+3,2026-08-29,AFC Wimbledon,Wigan Athletic
+3,2026-08-29,Cambridge United,Huddersfield Town
+3,2026-08-29,Leyton Orient,Barnsley
+3,2026-08-29,Mansfield Town,Luton Town
+3,2026-08-29,Notts County,Burton Albion
+3,2026-08-29,Plymouth Argyle,Bradford City
+3,2026-08-29,Sheffield Wednesday,Bromley
+3,2026-08-29,Stevenage,Doncaster Rovers
+3,2026-08-29,Stockport County,Wycombe Wanderers
+3,2026-09-08,Oxford United,Reading
+4,2026-09-01,Bradford City,Cambridge United
+4,2026-09-01,Bromley,Leyton Orient
+4,2026-09-01,Burton Albion,AFC Wimbledon
+4,2026-09-01,Doncaster Rovers,Notts County
+4,2026-09-01,Huddersfield Town,Oxford United
+4,2026-09-01,Leicester City,Plymouth Argyle
+4,2026-09-01,Luton Town,Stockport County
+4,2026-09-01,Peterborough United,Stevenage
+4,2026-09-01,Wigan Athletic,MK Dons
+4,2026-09-01,Wycombe Wanderers,Sheffield Wednesday
+4,2026-09-01,Reading,Mansfield Town
+4,2026-09-02,Barnsley,Blackpool
+5,2026-09-05,Peterborough United,Sheffield Wednesday
+5,2026-09-05,Wigan Athletic,Stockport County
+5,2026-09-05,Barnsley,Stevenage
+5,2026-09-05,Bradford City,Mansfield Town
+5,2026-09-05,Burton Albion,Cambridge United
+5,2026-09-05,Doncaster Rovers,Plymouth Argyle
+5,2026-09-05,Huddersfield Town,Notts County
+5,2026-09-05,Leicester City,Oxford United
+5,2026-09-05,Luton Town,Leyton Orient
+5,2026-09-05,Reading,Blackpool
+5,2026-09-05,Wycombe Wanderers,MK Dons
+5,2026-09-07,Bromley,AFC Wimbledon
+6,2026-09-10,Stevenage,Luton Town
+6,2026-09-12,Leyton Orient,Wycombe Wanderers
+6,2026-09-12,Notts County,Bradford City
+6,2026-09-12,AFC Wimbledon,Doncaster Rovers
+6,2026-09-12,Blackpool,Bromley
+6,2026-09-12,Cambridge United,Reading
+6,2026-09-12,Mansfield Town,Huddersfield Town
+6,2026-09-12,MK Dons,Peterborough United
+6,2026-09-12,Oxford United,Burton Albion
+6,2026-09-12,Plymouth Argyle,Barnsley
+6,2026-09-12,Sheffield Wednesday,Wigan Athletic
+6,2026-09-12,Stockport County,Leicester City
+7,2026-09-17,AFC Wimbledon,MK Dons
+7,2026-09-19,Barnsley,Leicester City
+7,2026-09-19,Burton Albion,Mansfield Town
+7,2026-09-19,Blackpool,Plymouth Argyle
+7,2026-09-19,Bromley,Huddersfield Town
+7,2026-09-19,Leyton Orient,Stevenage
+7,2026-09-19,Luton Town,Bradford City
+7,2026-09-19,Oxford United,Cambridge United
+7,2026-09-19,Peterborough United,Doncaster Rovers
+7,2026-09-19,Reading,Notts County
+7,2026-09-19,Sheffield Wednesday,Stockport County
+7,2026-09-19,Wigan Athletic,Wycombe Wanderers
+8,2026-09-26,Bradford City,Barnsley
+8,2026-09-26,Cambridge United,AFC Wimbledon
+8,2026-09-26,Doncaster Rovers,Oxford United
+8,2026-09-26,Huddersfield Town,Luton Town
+8,2026-09-26,Leicester City,Wigan Athletic
+8,2026-09-26,Mansfield Town,Leyton Orient
+8,2026-09-26,MK Dons,Bromley
+8,2026-09-26,Notts County,Blackpool
+8,2026-09-26,Plymouth Argyle,Burton Albion
+8,2026-09-26,Stevenage,Sheffield Wednesday
+8,2026-09-26,Stockport County,Peterborough United
+8,2026-09-26,Wycombe Wanderers,Reading
+9,2026-10-03,AFC Wimbledon,Stevenage
+9,2026-10-03,Barnsley,MK Dons
+9,2026-10-03,Blackpool,Leicester City
+9,2026-10-03,Bromley,Wycombe Wanderers
+9,2026-10-03,Burton Albion,Huddersfield Town
+9,2026-10-03,Leyton Orient,Plymouth Argyle
+9,2026-10-03,Luton Town,Doncaster Rovers
+9,2026-10-03,Oxford United,Stockport County
+9,2026-10-03,Peterborough United,Notts County
+9,2026-10-03,Reading,Bradford City
+9,2026-10-03,Sheffield Wednesday,Cambridge United
+9,2026-10-03,Wigan Athletic,Mansfield Town
+10,2026-10-10,Notts County,Oxford United
+10,2026-10-10,Plymouth Argyle,AFC Wimbledon
+10,2026-10-10,Bradford City,Leyton Orient
+10,2026-10-10,Cambridge United,Blackpool
+10,2026-10-10,Doncaster Rovers,Burton Albion
+10,2026-10-10,Huddersfield Town,Sheffield Wednesday
+10,2026-10-10,Leicester City,Peterborough United
+10,2026-10-10,Mansfield Town,Bromley
+10,2026-10-10,MK Dons,Reading
+10,2026-10-10,Stevenage,Wigan Athletic
+10,2026-10-10,Stockport County,Barnsley
+10,2026-10-10,Wycombe Wanderers,Luton Town
+11,2026-10-15,Mansfield Town,Oxford United
+11,2026-10-17,MK Dons,Luton Town
+11,2026-10-17,Peterborough United,Burton Albion
+11,2026-10-17,Barnsley,Cambridge United
+11,2026-10-17,Bradford City,Stevenage
+11,2026-10-17,Leicester City,Doncaster Rovers
+11,2026-10-17,Leyton Orient,Blackpool
+11,2026-10-17,Plymouth Argyle,Huddersfield Town
+11,2026-10-17,Sheffield Wednesday,AFC Wimbledon
+11,2026-10-17,Stockport County,Bromley
+11,2026-10-17,Wigan Athletic,Reading
+11,2026-10-17,Wycombe Wanderers,Notts County
+12,2026-10-20,AFC Wimbledon,Mansfield Town
+12,2026-10-20,Blackpool,MK Dons
+12,2026-10-20,Bromley,Leicester City
+12,2026-10-20,Burton Albion,Bradford City
+12,2026-10-20,Cambridge United,Wycombe Wanderers
+12,2026-10-20,Doncaster Rovers,Stockport County
+12,2026-10-20,Huddersfield Town,Peterborough United
+12,2026-10-20,Luton Town,Barnsley
+12,2026-10-20,Notts County,Sheffield Wednesday
+12,2026-10-20,Oxford United,Wigan Athletic
+12,2026-10-20,Stevenage,Plymouth Argyle
+12,2026-10-21,Reading,Leyton Orient
+13,2026-10-24,Huddersfield Town,Wigan Athletic
+13,2026-10-24,Luton Town,Leicester City
+13,2026-10-24,AFC Wimbledon,Wycombe Wanderers
+13,2026-10-24,Blackpool,Mansfield Town
+13,2026-10-24,Bromley,Peterborough United
+13,2026-10-24,Burton Albion,Leyton Orient
+13,2026-10-24,Cambridge United,Plymouth Argyle
+13,2026-10-24,Doncaster Rovers,Sheffield Wednesday
+13,2026-10-24,Notts County,Stockport County
+13,2026-10-24,Oxford United,Bradford City
+13,2026-10-24,Reading,Barnsley
+13,2026-10-24,Stevenage,MK Dons
+14,2026-10-31,Bradford City,Huddersfield Town
+14,2026-10-31,Leyton Orient,Cambridge United
+14,2026-10-31,Plymouth Argyle,Reading
+14,2026-10-31,Barnsley,Oxford United
+14,2026-10-31,Leicester City,Stevenage
+14,2026-10-31,Mansfield Town,Notts County
+14,2026-10-31,MK Dons,Doncaster Rovers
+14,2026-10-31,Peterborough United,Luton Town
+14,2026-10-31,Stockport County,AFC Wimbledon
+14,2026-10-31,Wigan Athletic,Bromley
+14,2026-10-31,Wycombe Wanderers,Burton Albion
+14,2026-11-01,Sheffield Wednesday,Blackpool
+15,2026-11-14,AFC Wimbledon,Blackpool
+15,2026-11-14,Bromley,Notts County
+15,2026-11-14,Doncaster Rovers,Leyton Orient
+15,2026-11-14,Leicester City,Bradford City
+15,2026-11-14,Luton Town,Cambridge United
+15,2026-11-14,MK Dons,Burton Albion
+15,2026-11-14,Peterborough United,Oxford United
+15,2026-11-14,Sheffield Wednesday,Plymouth Argyle
+15,2026-11-14,Stevenage,Mansfield Town
+15,2026-11-14,Stockport County,Reading
+15,2026-11-14,Wigan Athletic,Barnsley
+15,2026-11-14,Wycombe Wanderers,Huddersfield Town
+16,2026-11-20,Barnsley,Sheffield Wednesday
+16,2026-11-21,Blackpool,Wigan Athletic
+16,2026-11-21,Reading,Bromley
+16,2026-11-21,Bradford City,Doncaster Rovers
+16,2026-11-21,Burton Albion,Luton Town
+16,2026-11-21,Cambridge United,Stockport County
+16,2026-11-21,Huddersfield Town,Leicester City
+16,2026-11-21,Leyton Orient,AFC Wimbledon
+16,2026-11-21,Mansfield Town,MK Dons
+16,2026-11-21,Notts County,Stevenage
+16,2026-11-21,Oxford United,Wycombe Wanderers
+16,2026-11-21,Plymouth Argyle,Peterborough United
+17,2026-11-26,Doncaster Rovers,Huddersfield Town
+17,2026-11-28,MK Dons,Notts County
+17,2026-11-28,Peterborough United,Cambridge United
+17,2026-11-28,AFC Wimbledon,Barnsley
+17,2026-11-28,Bromley,Burton Albion
+17,2026-11-28,Leicester City,Mansfield Town
+17,2026-11-28,Luton Town,Oxford United
+17,2026-11-28,Sheffield Wednesday,Reading
+17,2026-11-28,Stevenage,Blackpool
+17,2026-11-28,Stockport County,Leyton Orient
+17,2026-11-28,Wigan Athletic,Plymouth Argyle
+17,2026-11-28,Wycombe Wanderers,Bradford City
+18,2026-12-01,Barnsley,Wycombe Wanderers
+18,2026-12-01,Blackpool,Luton Town
+18,2026-12-01,Bradford City,MK Dons
+18,2026-12-01,Burton Albion,Wigan Athletic
+18,2026-12-01,Cambridge United,Leicester City
+18,2026-12-01,Huddersfield Town,Stevenage
+18,2026-12-01,Leyton Orient,Peterborough United
+18,2026-12-01,Mansfield Town,Stockport County
+18,2026-12-01,Notts County,AFC Wimbledon
+18,2026-12-01,Oxford United,Sheffield Wednesday
+18,2026-12-01,Plymouth Argyle,Bromley
+18,2026-12-01,Reading,Doncaster Rovers
+19,2026-12-10,Leicester City,Sheffield Wednesday
+19,2026-12-12,Burton Albion,Reading
+19,2026-12-12,Stevenage,Stockport County
+19,2026-12-12,Bradford City,AFC Wimbledon
+19,2026-12-12,Doncaster Rovers,Bromley
+19,2026-12-12,Huddersfield Town,Leyton Orient
+19,2026-12-12,Luton Town,Wigan Athletic
+19,2026-12-12,Mansfield Town,Wycombe Wanderers
+19,2026-12-12,MK Dons,Cambridge United
+19,2026-12-12,Notts County,Plymouth Argyle
+19,2026-12-12,Oxford United,Blackpool
+19,2026-12-12,Peterborough United,Barnsley
+20,2026-12-18,Cambridge United,Stevenage
+20,2026-12-19,Barnsley,Huddersfield Town
+20,2026-12-19,Sheffield Wednesday,Luton Town
+20,2026-12-19,AFC Wimbledon,Oxford United
+20,2026-12-19,Blackpool,Burton Albion
+20,2026-12-19,Bromley,Bradford City
+20,2026-12-19,Leyton Orient,Notts County
+20,2026-12-19,Plymouth Argyle,Mansfield Town
+20,2026-12-19,Reading,Leicester City
+20,2026-12-19,Stockport County,MK Dons
+20,2026-12-19,Wigan Athletic,Peterborough United
+20,2026-12-19,Wycombe Wanderers,Doncaster Rovers
+21,2026-12-26,Bradford City,Stockport County
+21,2026-12-26,Burton Albion,Sheffield Wednesday
+21,2026-12-26,Doncaster Rovers,Wigan Athletic
+21,2026-12-26,Huddersfield Town,Blackpool
+21,2026-12-26,Leicester City,AFC Wimbledon
+21,2026-12-26,Luton Town,Bromley
+21,2026-12-26,Mansfield Town,Barnsley
+21,2026-12-26,MK Dons,Leyton Orient
+21,2026-12-26,Notts County,Cambridge United
+21,2026-12-26,Oxford United,Plymouth Argyle
+21,2026-12-26,Peterborough United,Wycombe Wanderers
+21,2026-12-26,Stevenage,Reading
+22,2026-12-29,AFC Wimbledon,Luton Town
+22,2026-12-29,Barnsley,Burton Albion
+22,2026-12-29,Blackpool,Bradford City
+22,2026-12-29,Bromley,Oxford United
+22,2026-12-29,Cambridge United,Doncaster Rovers
+22,2026-12-29,Leyton Orient,Leicester City
+22,2026-12-29,Plymouth Argyle,MK Dons
+22,2026-12-29,Sheffield Wednesday,Mansfield Town
+22,2026-12-29,Stockport County,Huddersfield Town
+22,2026-12-29,Wigan Athletic,Notts County
+22,2026-12-29,Wycombe Wanderers,Stevenage
+22,2026-12-29,Reading,Peterborough United
+23,2027-01-01,AFC Wimbledon,Peterborough United
+23,2027-01-01,Barnsley,Notts County
+23,2027-01-01,Blackpool,Doncaster Rovers
+23,2027-01-01,Bromley,Stevenage
+23,2027-01-01,Leyton Orient,Oxford United
+23,2027-01-01,Reading,MK Dons
+23,2027-01-01,Sheffield Wednesday,Huddersfield Town
+23,2027-01-01,Wigan Athletic,Bradford City
+23,2027-01-01,Wycombe Wanderers,Leicester City
+23,2027-01-02,Cambridge United,Mansfield Town
+23,2027-01-02,Plymouth Argyle,Luton Town
+23,2027-01-02,Stockport County,Burton Albion
+24,2027-01-08,Burton Albion,Blackpool
+24,2027-01-09,Oxford United,AFC Wimbledon
+24,2027-01-09,Stevenage,Cambridge United
+24,2027-01-09,Bradford City,Bromley
+24,2027-01-09,Doncaster Rovers,Wycombe Wanderers
+24,2027-01-09,Huddersfield Town,Barnsley
+24,2027-01-09,Leicester City,Reading
+24,2027-01-09,Luton Town,Sheffield Wednesday
+24,2027-01-09,Mansfield Town,Plymouth Argyle
+24,2027-01-09,MK Dons,Stockport County
+24,2027-01-09,Notts County,Leyton Orient
+24,2027-01-09,Peterborough United,Wigan Athletic
+25,2027-01-16,AFC Wimbledon,Sheffield Wednesday
+25,2027-01-16,Blackpool,Leyton Orient
+25,2027-01-16,Bromley,Stockport County
+25,2027-01-16,Burton Albion,Peterborough United
+25,2027-01-16,Cambridge United,Barnsley
+25,2027-01-16,Doncaster Rovers,Leicester City
+25,2027-01-16,Huddersfield Town,Plymouth Argyle
+25,2027-01-16,Luton Town,MK Dons
+25,2027-01-16,Notts County,Wycombe Wanderers
+25,2027-01-16,Oxford United,Mansfield Town
+25,2027-01-16,Reading,Wigan Athletic
+25,2027-01-16,Stevenage,Bradford City
+26,2027-01-19,Barnsley,Luton Town
+26,2027-01-19,Bradford City,Burton Albion
+26,2027-01-19,Leicester City,Bromley
+26,2027-01-19,Leyton Orient,Reading
+26,2027-01-19,Mansfield Town,AFC Wimbledon
+26,2027-01-19,MK Dons,Blackpool
+26,2027-01-19,Peterborough United,Huddersfield Town
+26,2027-01-19,Plymouth Argyle,Stevenage
+26,2027-01-19,Sheffield Wednesday,Notts County
+26,2027-01-19,Stockport County,Doncaster Rovers
+26,2027-01-19,Wigan Athletic,Oxford United
+26,2027-01-19,Wycombe Wanderers,Cambridge United
+27,2027-01-23,Barnsley,Reading
+27,2027-01-23,Bradford City,Oxford United
+27,2027-01-23,Leicester City,Luton Town
+27,2027-01-23,Leyton Orient,Burton Albion
+27,2027-01-23,Mansfield Town,Blackpool
+27,2027-01-23,MK Dons,Stevenage
+27,2027-01-23,Peterborough United,Bromley
+27,2027-01-23,Plymouth Argyle,Cambridge United
+27,2027-01-23,Sheffield Wednesday,Doncaster Rovers
+27,2027-01-23,Stockport County,Notts County
+27,2027-01-23,Wigan Athletic,Huddersfield Town
+27,2027-01-23,Wycombe Wanderers,AFC Wimbledon
+28,2027-01-30,Huddersfield Town,Bradford City
+28,2027-01-30,AFC Wimbledon,Stockport County
+28,2027-01-30,Blackpool,Sheffield Wednesday
+28,2027-01-30,Bromley,Wigan Athletic
+28,2027-01-30,Burton Albion,Wycombe Wanderers
+28,2027-01-30,Cambridge United,Leyton Orient
+28,2027-01-30,Doncaster Rovers,MK Dons
+28,2027-01-30,Luton Town,Peterborough United
+28,2027-01-30,Notts County,Mansfield Town
+28,2027-01-30,Oxford United,Barnsley
+28,2027-01-30,Reading,Plymouth Argyle
+28,2027-01-30,Stevenage,Leicester City
+29,2027-02-06,Barnsley,Leyton Orient
+29,2027-02-06,Bradford City,Plymouth Argyle
+29,2027-02-06,Bromley,Sheffield Wednesday
+29,2027-02-06,Burton Albion,Notts County
+29,2027-02-06,Doncaster Rovers,Stevenage
+29,2027-02-06,Huddersfield Town,Cambridge United
+29,2027-02-06,Leicester City,MK Dons
+29,2027-02-06,Luton Town,Mansfield Town
+29,2027-02-06,Peterborough United,Blackpool
+29,2027-02-06,Reading,Oxford United
+29,2027-02-06,Wigan Athletic,AFC Wimbledon
+29,2027-02-06,Wycombe Wanderers,Stockport County
+30,2027-02-09,AFC Wimbledon,Burton Albion
+30,2027-02-09,Blackpool,Barnsley
+30,2027-02-09,Cambridge United,Bradford City
+30,2027-02-09,Leyton Orient,Bromley
+30,2027-02-09,Mansfield Town,Reading
+30,2027-02-09,MK Dons,Wigan Athletic
+30,2027-02-09,Notts County,Doncaster Rovers
+30,2027-02-09,Oxford United,Huddersfield Town
+30,2027-02-09,Plymouth Argyle,Leicester City
+30,2027-02-09,Sheffield Wednesday,Wycombe Wanderers
+30,2027-02-09,Stevenage,Peterborough United
+30,2027-02-09,Stockport County,Luton Town
+31,2027-02-13,AFC Wimbledon,Bromley
+31,2027-02-13,Blackpool,Reading
+31,2027-02-13,Cambridge United,Burton Albion
+31,2027-02-13,Leyton Orient,Luton Town
+31,2027-02-13,Mansfield Town,Bradford City
+31,2027-02-13,MK Dons,Wycombe Wanderers
+31,2027-02-13,Notts County,Huddersfield Town
+31,2027-02-13,Oxford United,Leicester City
+31,2027-02-13,Plymouth Argyle,Doncaster Rovers
+31,2027-02-13,Sheffield Wednesday,Peterborough United
+31,2027-02-13,Stevenage,Barnsley
+31,2027-02-13,Stockport County,Wigan Athletic
+32,2027-02-20,Barnsley,Plymouth Argyle
+32,2027-02-20,Bradford City,Notts County
+32,2027-02-20,Bromley,Blackpool
+32,2027-02-20,Burton Albion,Oxford United
+32,2027-02-20,Doncaster Rovers,AFC Wimbledon
+32,2027-02-20,Huddersfield Town,Mansfield Town
+32,2027-02-20,Leicester City,Stockport County
+32,2027-02-20,Luton Town,Stevenage
+32,2027-02-20,Peterborough United,MK Dons
+32,2027-02-20,Reading,Cambridge United
+32,2027-02-20,Wigan Athletic,Sheffield Wednesday
+32,2027-02-20,Wycombe Wanderers,Leyton Orient
+33,2027-02-27,Cambridge United,Peterborough United
+33,2027-02-27,Barnsley,Wigan Athletic
+33,2027-02-27,Blackpool,AFC Wimbledon
+33,2027-02-27,Bradford City,Leicester City
+33,2027-02-27,Burton Albion,MK Dons
+33,2027-02-27,Huddersfield Town,Wycombe Wanderers
+33,2027-02-27,Leyton Orient,Doncaster Rovers
+33,2027-02-27,Mansfield Town,Stevenage
+33,2027-02-27,Notts County,Bromley
+33,2027-02-27,Oxford United,Luton Town
+33,2027-02-27,Plymouth Argyle,Sheffield Wednesday
+33,2027-02-27,Reading,Stockport County
+34,2027-03-06,AFC Wimbledon,Huddersfield Town
+34,2027-03-06,Bromley,Barnsley
+34,2027-03-06,Doncaster Rovers,Mansfield Town
+34,2027-03-06,Leicester City,Notts County
+34,2027-03-06,Luton Town,Reading
+34,2027-03-06,MK Dons,Oxford United
+34,2027-03-06,Peterborough United,Bradford City
+34,2027-03-06,Sheffield Wednesday,Leyton Orient
+34,2027-03-06,Stevenage,Burton Albion
+34,2027-03-06,Stockport County,Plymouth Argyle
+34,2027-03-06,Wigan Athletic,Cambridge United
+34,2027-03-06,Wycombe Wanderers,Blackpool
+35,2027-03-13,Barnsley,Doncaster Rovers
+35,2027-03-13,Blackpool,Stockport County
+35,2027-03-13,Bradford City,Sheffield Wednesday
+35,2027-03-13,Burton Albion,Leicester City
+35,2027-03-13,Cambridge United,Bromley
+35,2027-03-13,Huddersfield Town,MK Dons
+35,2027-03-13,Leyton Orient,Wigan Athletic
+35,2027-03-13,Mansfield Town,Peterborough United
+35,2027-03-13,Notts County,Luton Town
+35,2027-03-13,Oxford United,Stevenage
+35,2027-03-13,Plymouth Argyle,Wycombe Wanderers
+35,2027-03-13,Reading,AFC Wimbledon
+36,2027-03-20,AFC Wimbledon,Leyton Orient
+36,2027-03-20,Bromley,Reading
+36,2027-03-20,Doncaster Rovers,Bradford City
+36,2027-03-20,Leicester City,Huddersfield Town
+36,2027-03-20,Luton Town,Burton Albion
+36,2027-03-20,MK Dons,Mansfield Town
+36,2027-03-20,Peterborough United,Plymouth Argyle
+36,2027-03-20,Sheffield Wednesday,Barnsley
+36,2027-03-20,Stevenage,Notts County
+36,2027-03-20,Stockport County,Cambridge United
+36,2027-03-20,Wigan Athletic,Blackpool
+36,2027-03-20,Wycombe Wanderers,Oxford United
+37,2027-03-26,Bradford City,Wigan Athletic
+37,2027-03-26,Burton Albion,Stockport County
+37,2027-03-26,Doncaster Rovers,Blackpool
+37,2027-03-26,Huddersfield Town,Reading
+37,2027-03-26,Leicester City,Wycombe Wanderers
+37,2027-03-26,Luton Town,Plymouth Argyle
+37,2027-03-26,Mansfield Town,Cambridge United
+37,2027-03-26,MK Dons,Sheffield Wednesday
+37,2027-03-26,Notts County,Barnsley
+37,2027-03-26,Oxford United,Leyton Orient
+37,2027-03-26,Peterborough United,AFC Wimbledon
+37,2027-03-26,Stevenage,Bromley
+38,2027-03-29,AFC Wimbledon,Leicester City
+38,2027-03-29,Barnsley,Mansfield Town
+38,2027-03-29,Blackpool,Oxford United
+38,2027-03-29,Bromley,Doncaster Rovers
+38,2027-03-29,Cambridge United,MK Dons
+38,2027-03-29,Leyton Orient,Huddersfield Town
+38,2027-03-29,Plymouth Argyle,Notts County
+38,2027-03-29,Reading,Stevenage
+38,2027-03-29,Sheffield Wednesday,Burton Albion
+38,2027-03-29,Stockport County,Bradford City
+38,2027-03-29,Wigan Athletic,Luton Town
+38,2027-03-29,Wycombe Wanderers,Peterborough United
+39,2027-04-03,Bradford City,Blackpool
+39,2027-04-03,Burton Albion,Barnsley
+39,2027-04-03,Doncaster Rovers,Cambridge United
+39,2027-04-03,Huddersfield Town,Stockport County
+39,2027-04-03,Leicester City,Leyton Orient
+39,2027-04-03,Luton Town,AFC Wimbledon
+39,2027-04-03,Mansfield Town,Sheffield Wednesday
+39,2027-04-03,MK Dons,Plymouth Argyle
+39,2027-04-03,Notts County,Wigan Athletic
+39,2027-04-03,Oxford United,Bromley
+39,2027-04-03,Peterborough United,Reading
+39,2027-04-03,Stevenage,Wycombe Wanderers
+40,2027-04-10,AFC Wimbledon,Bradford City
+40,2027-04-10,Barnsley,Peterborough United
+40,2027-04-10,Blackpool,Huddersfield Town
+40,2027-04-10,Bromley,Luton Town
+40,2027-04-10,Cambridge United,Notts County
+40,2027-04-10,Leyton Orient,MK Dons
+40,2027-04-10,Plymouth Argyle,Oxford United
+40,2027-04-10,Reading,Burton Albion
+40,2027-04-10,Sheffield Wednesday,Leicester City
+40,2027-04-10,Stockport County,Stevenage
+40,2027-04-10,Wigan Athletic,Doncaster Rovers
+40,2027-04-10,Wycombe Wanderers,Mansfield Town
+41,2027-04-13,AFC Wimbledon,Cambridge United
+41,2027-04-13,Barnsley,Bradford City
+41,2027-04-13,Blackpool,Notts County
+41,2027-04-13,Bromley,MK Dons
+41,2027-04-13,Burton Albion,Plymouth Argyle
+41,2027-04-13,Leyton Orient,Mansfield Town
+41,2027-04-13,Luton Town,Huddersfield Town
+41,2027-04-13,Oxford United,Doncaster Rovers
+41,2027-04-13,Peterborough United,Stockport County
+41,2027-04-13,Sheffield Wednesday,Stevenage
+41,2027-04-13,Wigan Athletic,Leicester City
+41,2027-04-13,Reading,Wycombe Wanderers
+42,2027-04-17,MK Dons,AFC Wimbledon
+42,2027-04-17,Bradford City,Luton Town
+42,2027-04-17,Cambridge United,Oxford United
+42,2027-04-17,Doncaster Rovers,Peterborough United
+42,2027-04-17,Huddersfield Town,Bromley
+42,2027-04-17,Leicester City,Barnsley
+42,2027-04-17,Mansfield Town,Burton Albion
+42,2027-04-17,Notts County,Reading
+42,2027-04-17,Plymouth Argyle,Blackpool
+42,2027-04-17,Stevenage,Leyton Orient
+42,2027-04-17,Stockport County,Sheffield Wednesday
+42,2027-04-17,Wycombe Wanderers,Wigan Athletic
+43,2027-04-24,AFC Wimbledon,Plymouth Argyle
+43,2027-04-24,Barnsley,Stockport County
+43,2027-04-24,Blackpool,Cambridge United
+43,2027-04-24,Bromley,Mansfield Town
+43,2027-04-24,Burton Albion,Doncaster Rovers
+43,2027-04-24,Leyton Orient,Bradford City
+43,2027-04-24,Luton Town,Wycombe Wanderers
+43,2027-04-24,Oxford United,Notts County
+43,2027-04-24,Peterborough United,Leicester City
+43,2027-04-24,Reading,Huddersfield Town
+43,2027-04-24,Sheffield Wednesday,MK Dons
+43,2027-04-24,Wigan Athletic,Stevenage
+44,2027-04-27,Bradford City,Reading
+44,2027-04-27,Cambridge United,Sheffield Wednesday
+44,2027-04-27,Doncaster Rovers,Luton Town
+44,2027-04-27,Huddersfield Town,Burton Albion
+44,2027-04-27,Leicester City,Blackpool
+44,2027-04-27,Mansfield Town,Wigan Athletic
+44,2027-04-27,MK Dons,Barnsley
+44,2027-04-27,Notts County,Peterborough United
+44,2027-04-27,Plymouth Argyle,Leyton Orient
+44,2027-04-27,Stevenage,AFC Wimbledon
+44,2027-04-27,Stockport County,Oxford United
+44,2027-04-27,Wycombe Wanderers,Bromley
+45,2027-05-01,Barnsley,AFC Wimbledon
+45,2027-05-01,Blackpool,Stevenage
+45,2027-05-01,Bradford City,Wycombe Wanderers
+45,2027-05-01,Burton Albion,Bromley
+45,2027-05-01,Cambridge United,Luton Town
+45,2027-05-01,Huddersfield Town,Doncaster Rovers
+45,2027-05-01,Leyton Orient,Stockport County
+45,2027-05-01,Mansfield Town,Leicester City
+45,2027-05-01,Notts County,MK Dons
+45,2027-05-01,Oxford United,Peterborough United
+45,2027-05-01,Plymouth Argyle,Wigan Athletic
+45,2027-05-01,Reading,Sheffield Wednesday
+46,2027-05-08,AFC Wimbledon,Notts County
+46,2027-05-08,Bromley,Plymouth Argyle
+46,2027-05-08,Doncaster Rovers,Reading
+46,2027-05-08,Leicester City,Cambridge United
+46,2027-05-08,Luton Town,Blackpool
+46,2027-05-08,MK Dons,Bradford City
+46,2027-05-08,Peterborough United,Leyton Orient
+46,2027-05-08,Sheffield Wednesday,Oxford United
+46,2027-05-08,Stevenage,Huddersfield Town
+46,2027-05-08,Stockport County,Mansfield Town
+46,2027-05-08,Wigan Athletic,Burton Albion
+46,2027-05-08,Wycombe Wanderers,Barnsley
