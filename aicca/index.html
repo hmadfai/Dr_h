@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AICCA — Accumulator Analyst · West Ham Edition</title>
+  <meta name="description" content="Statistically-grounded dual-accumulator brief for Premier League, Championship, League One & League Two — 2,036 fixtures." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="crest" aria-hidden="true">WH</div>
+        <div>
+          <h1>AICCA</h1>
+          <p>Accumulator Analyst · UK Pro Tiers · Claret &amp; Sky Blue</p>
+          <p id="boot-stats" style="opacity:.75;font-size:.75rem;margin-top:2px">Loading fixtures…</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="control">
+          <label for="filter-league">League</label>
+          <select id="filter-league">
+            <option value="ALL">All leagues</option>
+            <option value="PL">Premier League</option>
+            <option value="CH">Championship</option>
+            <option value="L1">League One</option>
+            <option value="L2">League Two</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="filter-date">Date</label>
+          <select id="filter-date"><option value="">All dates</option></select>
+        </div>
+        <div class="control">
+          <label for="filter-round-view">Round</label>
+          <select id="filter-round-view"><option value="">All rounds</option></select>
+        </div>
+        <div class="control" style="min-width:180px">
+          <label for="filter-search">Search teams</label>
+          <input id="filter-search" type="search" placeholder="Arsenal, Wrexham…" />
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button type="button" class="btn btn-ghost" id="btn-framework">Framework</button>
+        <button type="button" class="btn btn-ghost" id="btn-seed">Seed Demo Accas</button>
+        <button type="button" class="btn btn-sky" id="btn-generate" disabled>Generate Dual Accas</button>
+      </div>
+    </header>
+
+    <div id="stale-banner" class="refresh-bar" style="margin-top:12px;border-radius:12px;border:1px solid rgba(184,134,11,.35)" hidden></div>
+
+    <div class="main-grid">
+      <!-- Left: fixtures -->
+      <section class="panel" aria-label="Fixtures">
+        <div class="panel-head">
+          <div>
+            <h2>Season Fixture Matrix</h2>
+            <p class="panel-sub">2,036 fixtures · PL 380 · Champ/L1/L2 552 each</p>
+          </div>
+          <span class="badge badge-count" id="fixture-count">—</span>
+        </div>
+
+        <div class="refresh-bar">
+          <strong>Refresh Fixtures</strong>
+          <select id="refresh-league" aria-label="Refresh league">
+            <option value="ALL">All</option>
+            <option value="PL">PL</option>
+            <option value="CH">CH</option>
+            <option value="L1">L1</option>
+            <option value="L2">L2</option>
+          </select>
+          <select id="refresh-round" aria-label="Refresh round"></select>
+          <button type="button" class="btn btn-sky" id="btn-refresh">Refresh</button>
+          <span id="refresh-status" class="status-pill status-idle">Idle</span>
+          <span id="refresh-detail" style="color:var(--muted)">Sources: PL API · EFL · Opta · ESPN/Sky · weather desks</span>
+          <label style="display:flex;align-items:center;gap:6px;margin-left:auto;font-size:.8rem">
+            <input type="checkbox" id="auto-refresh" /> Auto-refresh daily
+          </label>
+        </div>
+
+        <div class="fixture-tools">
+          <div class="search-box" style="flex:1">
+            <em style="font-size:.78rem;color:var(--muted)">Click a row to add · choose Acca target on the right</em>
+          </div>
+          <label style="font-size:.8rem;display:flex;align-items:center;gap:6px">
+            <input type="radio" name="pick-target" value="A" checked /> Acca A
+          </label>
+          <label style="font-size:.8rem;display:flex;align-items:center;gap:6px">
+            <input type="radio" name="pick-target" value="B" /> Acca B
+          </label>
+        </div>
+
+        <div class="table-wrap">
+          <table class="fixtures">
+            <thead>
+              <tr>
+                <th data-sort="leagueCode">League</th>
+                <th data-sort="round">Round</th>
+                <th data-sort="date">Date</th>
+                <th data-sort="home">Home</th>
+                <th data-sort="away">Away</th>
+                <th data-sort="venue">Venue</th>
+              </tr>
+            </thead>
+            <tbody id="fixture-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Right: Accas -->
+      <div class="right-stack">
+        <section class="panel acca-panel" aria-label="Accumulator A">
+          <div class="panel-head">
+            <div>
+              <h2>Accumulator A — Comprehensive</h2>
+              <p class="panel-sub">5–7 legs · Match Odds + Goals + Player + Corners + Cards + HT · ≥5/1 · ≥60% HIGH</p>
+            </div>
+            <button type="button" class="btn btn-outline" id="btn-clear-a">Clear</button>
+          </div>
+          <div class="legs" id="legs-a"></div>
+          <div class="summary-bar">
+            <div class="stat"><div class="val" id="stat-a-legs">0</div><div class="lbl">Legs</div></div>
+            <div class="stat"><div class="val" id="stat-a-odds">—</div><div class="lbl">Combined</div></div>
+            <div class="stat"><div class="val" id="stat-a-conf">—</div><div class="lbl">Confidence</div></div>
+            <div class="stat"><div class="val" id="stat-a-fx">0</div><div class="lbl">Fixtures</div></div>
+          </div>
+          <div class="validation-list" id="val-a"></div>
+        </section>
+
+        <section class="panel acca-panel" aria-label="Accumulator B">
+          <div class="panel-head">
+            <div>
+              <h2>Accumulator B — Match Result Only</h2>
+              <p class="panel-sub">4–5 legs · 1X2 only · 100% HIGH · ≥5/1 · no shared fixtures with A</p>
+            </div>
+            <button type="button" class="btn btn-outline" id="btn-clear-b">Clear</button>
+          </div>
+          <div class="legs" id="legs-b"></div>
+          <div class="summary-bar">
+            <div class="stat"><div class="val" id="stat-b-legs">0</div><div class="lbl">Legs</div></div>
+            <div class="stat"><div class="val" id="stat-b-odds">—</div><div class="lbl">Combined</div></div>
+            <div class="stat"><div class="val" id="stat-b-conf">—</div><div class="lbl">Confidence</div></div>
+            <div class="stat"><div class="val" id="stat-b-fx">0</div><div class="lbl">Fixtures</div></div>
+          </div>
+          <div class="validation-list" id="val-b"></div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer-actions">
+      <div class="global-checks" id="global-checks"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" class="btn btn-claret" id="btn-generate-footer" onclick="document.getElementById('btn-generate').click()">Generate Dual Accas</button>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-head">
+        <h2 id="modal-title">Dual-Accumulator Brief</h2>
+        <button type="button" class="btn btn-ghost" id="btn-close-modal">Close</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-sky" id="btn-export-pdf">Download / Print PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="framework-modal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-head">
+        <h2>AICCA Framework — Sections 01–13</h2>
+        <button type="button" class="btn btn-ghost" id="btn-close-framework">Close</button>
+      </div>
+      <div class="modal-body" id="framework-body" style="font-size:.9rem;line-height:1.45"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="data/fixtures.js"></script>
+  <script src="js/markets.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
