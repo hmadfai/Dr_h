@@ -118,10 +118,15 @@ def main() -> None:
         m3.metric("Predicted label", str(result.prediction_label))
         m4.metric("Trees used", str(len(result.tree_contributions)))
 
-        st.plotly_chart(contribution_bar_figure(result.tree_contributions, top_n=40), use_container_width=True)
+        st.plotly_chart(
+            contribution_bar_figure(result.tree_contributions, top_n=40),
+            use_container_width=True,
+            key="contrib_bar_chart",
+        )
         st.plotly_chart(
             cumulative_score_figure(result.tree_contributions, max_trees=min(300, booster.num_trees())),
             use_container_width=True,
+            key="cumulative_score_chart",
         )
 
         st.subheader("Tree used in the probability calculation")
@@ -145,7 +150,7 @@ def main() -> None:
         viz_cols = st.columns([3, 2])
         with viz_cols[0]:
             fig = tree_figure_from_booster(booster, tree_index, contribution, model_dump=model_dump)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key=f"main_tree_chart_{tree_index}")
         with viz_cols[1]:
             st.markdown(
                 f"**Leaf:** {contribution.leaf_index}  \n"
@@ -171,6 +176,7 @@ def main() -> None:
                 st.plotly_chart(
                     tree_figure_from_booster(booster, contrib.tree_index, contrib, model_dump=model_dump),
                     use_container_width=True,
+                    key=f"top_tree_chart_{contrib.tree_index}",
                 )
 
         payload = {
