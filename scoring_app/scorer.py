@@ -15,11 +15,36 @@ class SplitStep:
     node_id: int
     feature: str | None
     feature_index: int | None
-    threshold: float | None
+    threshold: float | str | None
     decision: str
     direction: str  # "left" | "right" | "leaf"
     value_seen: float | None
     is_categorical: bool = False
+
+
+def _format_threshold(threshold: Any, *, categorical: bool) -> str:
+    """Format numeric or categorical LightGBM dump thresholds (e.g. '1||4')."""
+    if threshold is None:
+        return "?"
+    if categorical or isinstance(threshold, str):
+        text = str(threshold).replace("||", ", ")
+        return text
+    try:
+        return f"{float(threshold):g}"
+    except (TypeError, ValueError):
+        return str(threshold)
+
+
+def _coerce_threshold(raw: Any, *, categorical: bool) -> float | str | None:
+    if raw is None:
+        return None
+    if categorical or isinstance(raw, str):
+        # Keep categorical bitsets / category lists as readable strings.
+        return str(raw)
+    try:
+        return float(raw)
+    except (TypeError, ValueError):
+        return str(raw)
 
 
 @dataclass
@@ -57,7 +82,13 @@ def _as_feature_frame(
         return pd.DataFrame([features.reindex(feature_names).astype(float).tolist()], columns=list(feature_names))
 
     if isinstance(features, Mapping):
-        row = {name: float(features.get(name, np.nan)) for name in feature_names}
+        row: dict[str, float] = {}
+        for name in feature_names:
+            raw = features.get(name, np.nan)
+            try:
+                row[name] = float(raw) if raw is not None and raw != "" else np.nan
+            except (TypeError, ValueError):
+                row[name] = np.nan
         return pd.DataFrame([row], columns=list(feature_names))
 
     arr = np.asarray(features, dtype=float)
@@ -122,14 +153,18 @@ def find_path_to_leaf(
 
     feat_idx = int(node["split_feature"])
     feat_name = feature_names[feat_idx] if feat_idx < len(feature_names) else f"f{feat_idx}"
-    threshold = float(node.get("threshold", 0.0))
     decision_type = str(node.get("decision_type", "<="))
     is_cat = decision_type in {"==", "categorical"}
-    value = float(x[feat_idx]) if feat_idx < len(x) else np.nan
+    threshold = _coerce_threshold(node.get("threshold", 0.0), categorical=is_cat)
+    thr_text = _format_threshold(threshold, categorical=is_cat)
+    try:
+        value = float(x[feat_idx]) if feat_idx < len(x) else np.nan
+    except (TypeError, ValueError):
+        value = np.nan
     decision = (
-        f"{feat_name} (categorical split @ {threshold:g})"
+        f"{feat_name} in {{{thr_text}}} ?"
         if is_cat
-        else f"{feat_name} <= {threshold:g} ?"
+        else f"{feat_name} <= {thr_text} ?"
     )
 
     for direction, child_key in (("left", "left_child"), ("right", "right_child")):

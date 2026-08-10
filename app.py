@@ -72,7 +72,9 @@ def main() -> None:
     with st.expander("Feature values (editable)", expanded=True):
         df = pd.DataFrame([st.session_state.feature_row])
         edited = st.data_editor(df, use_container_width=True, num_rows="fixed", key="feature_editor")
-        st.session_state.feature_row = edited.iloc[0].to_dict()
+        # Streamlit may return object/string dtypes; coerce to float for scoring.
+        coerced = edited.iloc[0].apply(pd.to_numeric, errors="coerce")
+        st.session_state.feature_row = coerced.to_dict()
 
     score_col, batch_col = st.columns([2, 1])
     with score_col:

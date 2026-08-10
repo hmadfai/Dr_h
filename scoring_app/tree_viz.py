@@ -7,7 +7,7 @@ from typing import Any, Sequence
 import lightgbm as lgb
 import plotly.graph_objects as go
 
-from .scorer import SplitStep, TreeContribution
+from .scorer import SplitStep, TreeContribution, _format_threshold
 
 
 def _collect_nodes(
@@ -40,12 +40,13 @@ def _collect_nodes(
     feat_idx = int(node["split_feature"])
     feat_name = feature_names[feat_idx] if feat_idx < len(feature_names) else f"f{feat_idx}"
     short = feat_name if len(feat_name) <= 28 else feat_name[:25] + "…"
-    threshold = float(node.get("threshold", 0.0))
     decision_type = str(node.get("decision_type", "<="))
-    if decision_type in {"==", "categorical"}:
-        label = f"{short}\n== {threshold:g}"
+    is_cat = decision_type in {"==", "categorical"}
+    thr_text = _format_threshold(node.get("threshold", 0.0), categorical=is_cat)
+    if is_cat:
+        label = f"{short}\nin {{{thr_text}}}"
     else:
-        label = f"{short}\n<= {threshold:g}"
+        label = f"{short}\n<= {thr_text}"
 
     records.append(
         {
