@@ -1,0 +1,314 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  passwordHash String
+  role         String
+  active       Boolean   @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Organisation {
+  id                 String    @id @default(cuid())
+  legalName          String
+  tradingName        String?
+  companiesHouseNo   String?
+  addressLine1       String
+  city               String
+  postcode           String
+  sector             String?
+  employeeCount      Int?
+  levyStatus         String
+  dasAccountId       String
+  dasHolderName      String
+  dasHolderJobTitle  String
+  dasHolderEmail     String
+  dasHolderEmailHash String
+  dasHolderPhone     String
+  notes              String?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  learners           Learner[]
+  consents           ConsentRecord[]
+
+  @@index([dasHolderEmailHash])
+  @@index([legalName])
+}
+
+model Programme {
+  id             String    @id @default(cuid())
+  name           String
+  standardCode   String
+  level          Int
+  durationMonths Int
+  fundingBandMax Int?
+  epao           String?
+  otjHoursTarget Int
+  description    String?
+  active         Boolean   @default(true)
+  learners       Learner[]
+}
+
+model Learner {
+  id                  String    @id @default(cuid())
+  reference           String    @unique
+  firstName           String
+  lastName            String
+  preferredName       String?
+  email               String
+  emailHash           String
+  phone               String?
+  dateOfBirth         String?
+  nationalInsurance   String?
+  uln                 String?
+  addressLine1        String?
+  city                String?
+  postcode            String?
+  jobTitle            String?
+  organisationId      String
+  organisation        Organisation @relation(fields: [organisationId], references: [id])
+  programmeId         String?
+  programme           Programme?   @relation(fields: [programmeId], references: [id])
+  lineManagerName     String
+  lineManagerJobTitle String
+  lineManagerEmail    String
+  lineManagerPhone    String
+  status              String
+  pipelineStage       String
+  startDate           DateTime?
+  plannedEndDate      DateTime?
+  actualEndDate       DateTime?
+  otjHoursRequired    Int       @default(0)
+  otjHoursLogged      Int       @default(0)
+  rightToWorkChecked  Boolean   @default(false)
+  residencyEligible   Boolean   @default(false)
+  erasedAt            DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  progress            ProgressEntry[]
+  anomalies           Anomaly[]
+  dropouts            DropoutCase[]
+  consents            ConsentRecord[]
+  notes               Note[]
+  gdprRequests        GdprRequest[]
+
+  @@index([emailHash])
+  @@index([status])
+  @@index([pipelineStage])
+  @@index([organisationId])
+}
+
+model ProgressEntry {
+  id           String   @id @default(cuid())
+  learnerId    String
+  learner      Learner  @relation(fields: [learnerId], references: [id], onDelete: Cascade)
+  type         String
+  title        String
+  details      String?
+  hours        Int?
+  percent      Int?
+  occurredAt   DateTime
+  recordedById String?
+  createdAt    DateTime @default(now())
+
+  @@index([learnerId])
+}
+
+model Anomaly {
+  id          String    @id @default(cuid())
+  learnerId   String
+  learner     Learner   @relation(fields: [learnerId], references: [id], onDelete: Cascade)
+  type        String
+  severity    String
+  title       String
+  description String
+  status      String
+  detectedAt  DateTime  @default(now())
+  resolvedAt  DateTime?
+  resolution  String?
+  ownerId     String?
+
+  @@index([learnerId])
+  @@index([status])
+}
+
+model DropoutCase {
+  id               String   @id @default(cuid())
+  learnerId        String
+  learner          Learner  @relation(fields: [learnerId], references: [id], onDelete: Cascade)
+  status           String
+  ilrReasonCode    String?
+  reasonDetail     String
+  lastAttendanceAt DateTime?
+  withdrawalDate   DateTime?
+  atRiskSince      DateTime?
+  assignedToId     String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  activities       ReengagementActivity[]
+
+  @@index([learnerId])
+  @@index([status])
+}
+
+model ReengagementActivity {
+  id            String      @id @default(cuid())
+  dropoutCaseId String
+  dropoutCase   DropoutCase @relation(fields: [dropoutCaseId], references: [id], onDelete: Cascade)
+  type          String
+  summary       String
+  outcome       String
+  occurredAt    DateTime    @default(now())
+  performedById String?
+  emailId       String?
+}
+
+model ConsentRecord {
+  id                   String    @id @default(cuid())
+  subjectType          String
+  subjectName          String
+  subjectEmailHash     String
+  learnerId            String?
+  learner              Learner?  @relation(fields: [learnerId], references: [id])
+  organisationId       String?
+  organisation         Organisation? @relation(fields: [organisationId], references: [id])
+  purpose              String
+  lawfulBasis          String
+  privacyNoticeVersion String
+  given                Boolean
+  method               String
+  givenAt              DateTime
+  withdrawnAt          DateTime?
+  evidence             String?
+  recordedById         String?
+
+  @@index([subjectEmailHash])
+  @@index([learnerId])
+  @@index([purpose])
+}
+
+model GdprRequest {
+  id                 String    @id @default(cuid())
+  reference          String    @unique
+  type               String
+  status             String
+  subjectName        String
+  subjectEmail       String
+  subjectEmailHash   String
+  learnerId          String?
+  learner            Learner?  @relation(fields: [learnerId], references: [id])
+  receivedAt         DateTime  @default(now())
+  dueAt              DateTime
+  completedAt        DateTime?
+  identityVerified   Boolean   @default(false)
+  notes              String?
+  outcome            String?
+  assignedToId       String?
+  removal            RemovalRecord?
+
+  @@index([status])
+  @@index([subjectEmailHash])
+}
+
+model RemovalRecord {
+  id                  String       @id @default(cuid())
+  gdprRequestId       String?      @unique
+  gdprRequest         GdprRequest? @relation(fields: [gdprRequestId], references: [id])
+  learnerId           String?
+  subjectNameSnapshot String
+  subjectEmailHash    String
+  requestedAt         DateTime
+  processedAt         DateTime?
+  status              String
+  legalRetentionNote  String?
+  processedById       String?
+
+  @@index([subjectEmailHash])
+  @@index([status])
+}
+
+model EmailTemplate {
+  id       String  @id @default(cuid())
+  name     String
+  category String
+  subject  String
+  body     String
+  active   Boolean @default(true)
+}
+
+model EmailMessage {
+  id          String    @id @default(cuid())
+  templateId  String?
+  toAddresses String
+  ccAddresses String?
+  subject     String
+  body        String
+  status      String
+  relatedType String?
+  relatedId   String?
+  error       String?
+  sentAt      DateTime?
+  createdById String?
+  createdAt   DateTime  @default(now())
+}
+
+model Task {
+  id          String    @id @default(cuid())
+  title       String
+  details     String?
+  dueAt       DateTime?
+  status      String
+  relatedType String?
+  relatedId   String?
+  assigneeId  String?
+  createdAt   DateTime  @default(now())
+}
+
+model Note {
+  id          String   @id @default(cuid())
+  body        String
+  relatedType String
+  relatedId   String
+  learnerId   String?
+  learner     Learner? @relation(fields: [learnerId], references: [id])
+  authorId    String?
+  createdAt   DateTime @default(now())
+
+  @@index([relatedType, relatedId])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actorEmail String?
+  action     String
+  entityType String
+  entityId   String?
+  metadata   String?
+  ip         String?
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+model AppSetting {
+  key   String @id
+  value String
+}
+
+model Sequence {
+  name  String @id
+  value Int
+}

@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tid-navy: #042f7e;
+  --tid-navy-dark: #032b74;
+  --tid-navy-light: #0844ad;
+  --tid-accent: #2867b2;
+  --tid-muted: #f6f6f6;
+  --tid-ink: #1b1b1b;
+  --tid-line: #d0d2db;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  color: var(--tid-ink);
+  background: var(--tid-muted);
+}
+
+input[type="date"],
+input[type="datetime-local"] {
+  color-scheme: light;
+}
