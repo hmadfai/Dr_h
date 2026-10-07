@@ -28,7 +28,18 @@ export default defineConfig({
     build: {
       outDir: 'out/preload',
       rollupOptions: {
-        input: resolve(__dirname, 'src/preload/index.ts')
+        input: resolve(__dirname, 'src/preload/index.ts'),
+        // Electron's sandboxed preload loader does not support ESM `import`
+        // syntax (even from a `.mjs` file), but this package is `"type":
+        // "module"` for the rest of the app. Force CommonJS with an explicit
+        // `.cjs` extension so Node's module resolution treats it as CJS
+        // regardless of the nearest `package.json`, and so it loads
+        // correctly under `sandbox: true` (verified by launching the built
+        // app; see docs/troubleshooting.md).
+        output: {
+          format: 'cjs',
+          entryFileNames: 'index.cjs'
+        }
       }
     }
   },

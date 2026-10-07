@@ -24,11 +24,34 @@ always an error like *"was compiled against a different Node.js version"*.
 ### Electron's binary never downloads / `npm run dev` hangs
 Electron's postinstall step downloads a prebuilt Chromium+Node binary for
 your platform from GitHub Releases. If your network blocks that, `npm run
-dev` cannot start. This affected the Linux sandbox this project was
-originally developed in — the app could be built and fully unit-tested
-there, but **never actually launched** (no Electron binary, no display). If
-you hit this on your Mac, check your network/proxy and that
-`ELECTRON_SKIP_BINARY_DOWNLOAD`/`ELECTRON_MIRROR` aren't misconfigured.
+dev` cannot start. If you hit this on your Mac, check your network/proxy
+and that `ELECTRON_SKIP_BINARY_DOWNLOAD`/`ELECTRON_MIRROR` aren't
+misconfigured.
+
+(Historical note: an earlier revision of this doc said the binary "never
+downloads" in this project's Linux development sandbox and that the app was
+"never actually launched." That was true at the time but was re-checked: on
+a later run, with network access available, the binary downloaded fine and
+the built app was launched headlessly under Xvfb and driven over the Chrome
+DevTools Protocol, which is how the preload bug below was actually found and
+fixed. Headless Linux + Xvfb is still not macOS — Keychain, Tray, and native
+notification behavior remain unverified outside a real Mac.)
+
+### Preload script fails to load / renderer throws `Cannot read properties of undefined (reading '...')`
+If `window.padelApi` is `undefined` in the renderer, check the main
+process's stderr for either `ENOENT ... out/preload/index.js` (wrong file
+extension referenced) or `SyntaxError: Cannot use import statement outside a
+module` (preload built as ESM). Electron's **sandboxed** preload loader
+(`sandbox: true`, which this app uses) cannot `import` an ES module,
+regardless of extension — it must be CommonJS. This project's
+`electron.vite.config.ts` forces the preload build to CJS with an explicit
+`index.cjs` output specifically to avoid this, even though the rest of the
+app is `"type": "module"`. If you change the preload build config, re-launch
+the real app (`npm run build && npx electron out/main/index.js`, or under
+Xvfb on Linux: `xvfb-run -a npx electron --no-sandbox out/main/index.js`)
+and check for renderer console errors — a clean `npm run typecheck`/`npm
+test` will **not** catch this class of bug, since it only manifests when
+Electron's sandboxed preload loader actually tries to load the file.
 
 ## Connection
 

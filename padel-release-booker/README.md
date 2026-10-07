@@ -143,10 +143,24 @@ Apple account this task cannot provide or verify on your behalf.
 **This project's build/packaging steps were authored and the config's
 syntax was validated, but `npm run build:mac` itself was not executed**
 during development — the environment used to write this app had no macOS
-host and Electron's binary did not download (see
-`docs/troubleshooting.md`). Please run the build and packaging commands
-yourself on a Mac and report back if anything fails; do not take "the config
-exists" as proof the packaged app has been verified to launch.
+host, so the `.dmg`/`.zip` outputs and macOS-only features (Keychain,
+Tray icon rendering, native notification permission prompts,
+`start-at-login`) are **not** verified on real macOS. What **was** verified,
+on Linux under Xvfb (a virtual display), by actually launching the built
+`out/main/index.js` with the real Electron binary and driving it over the
+Chrome DevTools Protocol (not just unit tests): the main process boots, the
+single-instance lock and SQLite schema are created, the sandboxed preload
+bridge loads and exposes `window.padelApi` to the renderer with no
+JavaScript errors, the React UI renders and navigates across all four pages,
+and the mock-mode "resolve club by URL" flow round-trips through real IPC to
+the main process and back. This caught and fixed a real bug (the preload
+script was built as ESM but Electron's sandboxed preload loader cannot
+`import` ESM — see `docs/troubleshooting.md`). It does **not** verify
+anything macOS-specific (Keychain via `safeStorage`, the Tray icon,
+native notification permission UX, start-at-login, code signing/Gatekeeper).
+Please run the build and packaging commands yourself on a Mac and report
+back if anything fails; do not take "it launched on Linux" as proof the
+packaged macOS app behaves identically.
 
 ## Documentation map
 
@@ -167,13 +181,23 @@ exists" as proof the packaged app has been verified to launch.
 
 - ✅ Core logic (state machine, scheduler, booking engine, timezone/DST math,
   duplicate guards, authorization hashing, SQLite persistence) — unit
-  tested, 80 tests passing, strict `tsc` clean.
+  tested, 81 tests passing, strict `tsc` clean.
 - ✅ `electron-vite build` succeeds (main, preload, renderer all compile and
   bundle).
 - ✅ A React UI smoke test exercises create → preview → create & review →
   arm, plus pause/resume/delete, against a mocked `window.padelApi`.
-- ❌ **Not verified**: actually launching the Electron app, the tray icon,
-  real native notifications, real macOS Keychain reads/writes, and the
-  packaged `.app`/`.dmg`. The development environment for this task had no
-  macOS host and no display; see `docs/troubleshooting.md`. Please verify
-  these yourself on a Mac before trusting this for a booking you care about.
+- ✅ **Real (non-macOS) runtime smoke test**: the packaged main process was
+  actually launched with the real Electron 44 binary under Xvfb on Linux and
+  driven over the Chrome DevTools Protocol — window opens, preload bridge
+  loads with zero renderer JS errors, SQLite tables are created on disk, and
+  Dashboard / Connection / Setup Wizard / Booking History all render and
+  respond to real IPC round-trips (mock club resolution included). This is
+  **not** a macOS verification, but it is a real, non-mocked boot of the
+  actual built app, not just unit tests against the core logic.
+- ❌ **Still not verified**: the tray icon's real rendering and click
+  behavior, real native macOS notification permission prompts, real macOS
+  Keychain reads/writes via `safeStorage`, start-at-login registration, and
+  the packaged `.app`/`.dmg`/code-signing flow. The development environment
+  for this task has no macOS host; see `docs/troubleshooting.md`. Please
+  verify these yourself on a Mac before trusting this for a booking you care
+  about.
