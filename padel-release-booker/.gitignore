@@ -1,0 +1,19 @@
+node_modules/
+out/
+dist/
+release/
+*.log
+.DS_Store
+
+# Local runtime data — never commit secrets, sessions, or diagnostic captures
+userdata/
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+diagnostics/
+*.local.json
+
+# Editors
+.vscode/
+.idea/

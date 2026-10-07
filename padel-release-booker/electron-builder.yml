@@ -1,0 +1,31 @@
+appId: com.example.padelreleasebooker
+productName: Padel Release Booker
+copyright: "Padel Release Booker contributors"
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**/*
+  - package.json
+asarUnpack:
+  # better-sqlite3's compiled .node binary must stay unpacked from the asar
+  # archive so the OS loader can dlopen it at runtime.
+  - "**/better-sqlite3/**"
+mac:
+  category: public.app-category.sports
+  target:
+    - target: dmg
+      arch: [arm64, x64]
+    - target: zip
+      arch: [arm64, x64]
+  # No hardened-runtime entitlements are declared yet because this build is
+  # unsigned (see README "Packaging, signing, and notarization"). Add
+  # entitlements and enable hardenedRuntime once you have an Apple Developer
+  # ID certificate to sign with — an unsigned hardened-runtime build will not
+  # launch.
+  hardenedRuntime: false
+  gatekeeperAssess: false
+  minimumSystemVersion: "13.0.0"
+dmg:
+  sign: false
+publish: null

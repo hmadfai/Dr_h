@@ -1,0 +1,34 @@
+{
+  "_comment": "FICTIONAL SAMPLE DATA ONLY. 'Riverside Padel Club' is not a real Playtomic venue — it only exists inside this app's Mock sandbox (src/main/mockFixtures.ts) so you can try the whole flow before entering your own club. This file documents the shape the Setup Wizard produces; the app itself has no JSON import feature — enter rules through the wizard, which is also how it validates every field (see core/domain/validation.ts).",
+  "club": {
+    "id": "club-fictional-riverside",
+    "name": "Riverside Padel Club (fictional — sample data)",
+    "location": "1 Example Lane, Faketown, Imaginary County",
+    "timezone": "Europe/Madrid",
+    "sourceUrl": "https://playtomic.com/clubs/fictional-riverside-padel-club",
+    "verified": true
+  },
+  "rule": {
+    "name": "Tuesday 19:00 sample rule (fictional club)",
+    "clubId": "club-fictional-riverside",
+    "playDate": { "kind": "recurring", "weekdays": ["TUE"], "endDate": null, "occurrenceLimit": null },
+    "preferredStartTime": "19:00",
+    "durationMinutes": 90,
+    "preferredCourtIds": ["court-1"],
+    "surfacePreference": "indoor",
+    "exactTimeOnly": true,
+    "fallbackOptions": [{ "startTime": "19:30", "courtIds": ["court-2"] }],
+    "maxTotalPrice": 28,
+    "currency": "EUR",
+    "maxSuccessfulBookingsPerOccurrence": 1,
+    "maxFutureActiveBookings": 4,
+    "exclusionDates": [],
+    "release": { "kind": "days-before-at-local-time", "daysBefore": 7, "localTime": "08:00", "verified": false },
+    "preflightMinutesBeforeRelease": 5,
+    "pollingWindowSeconds": 90,
+    "pollingIntervalSeconds": 3,
+    "ambiguousLocalTimePolicy": "latest",
+    "nonexistentLocalTimePolicy": "push-forward",
+    "mode": "mock"
+  }
+}
