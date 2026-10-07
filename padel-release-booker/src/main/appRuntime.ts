@@ -19,7 +19,7 @@ import type { AuthorizationReviewInput } from '../core/domain/authorization.js';
 import type { Clock } from '../core/time/clock.js';
 import type { AdapterMode, BookingRule, Club, SessionInfo } from '../core/domain/types.js';
 import type { PlaytomicAdapter } from '../core/adapters/PlaytomicAdapter.js';
-import { createDefaultMockWorld, MockPlaytomicAdapter } from '../core/adapters/mockAdapter.js';
+import { assertMockNeverClaimsReal, createDefaultMockWorld, MockPlaytomicAdapter } from '../core/adapters/mockAdapter.js';
 import type { MockWorld } from '../core/adapters/mockAdapter.js';
 import { AssistedPlaytomicAdapter } from '../core/adapters/assistedAdapter.js';
 import type { ExternalUrlOpener } from '../core/adapters/assistedAdapter.js';
@@ -88,6 +88,7 @@ export class AppRuntime extends EventEmitter {
 
     this.mockWorld = buildFictionalMockWorld();
     this.adapter = new MockPlaytomicAdapter(this.mockWorld, deps.clock);
+    assertMockNeverClaimsReal(this.adapter);
 
     const storedAssisted = this.sessions.get('assisted');
     if (storedAssisted) this.assistedSession = storedAssisted;
@@ -141,6 +142,7 @@ export class AppRuntime extends EventEmitter {
     this.currentMode = mode;
     if (mode === 'mock') {
       this.adapter = new MockPlaytomicAdapter(this.mockWorld, this.deps.clock);
+      assertMockNeverClaimsReal(this.adapter);
       const session = await this.adapter.connect(hint ? { hint } : undefined);
       return session;
     }

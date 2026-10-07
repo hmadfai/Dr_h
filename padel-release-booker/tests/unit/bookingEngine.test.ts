@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FakeClock } from '../../src/core/time/clock.js';
-import { createDefaultMockWorld, MockPlaytomicAdapter } from '../../src/core/adapters/mockAdapter.js';
+import { assertMockNeverClaimsReal, createDefaultMockWorld, MockPlaytomicAdapter } from '../../src/core/adapters/mockAdapter.js';
 import type { MockWorld } from '../../src/core/adapters/mockAdapter.js';
 import { InMemoryOccurrenceLockStore } from '../../src/core/engine/duplicateGuard.js';
 import { pollOccurrenceOnce, reconcileUnknownOutcome, runPreflight } from '../../src/core/engine/bookingEngine.js';
@@ -50,6 +50,13 @@ const SLOT = {
   price: 24,
   currency: 'EUR'
 };
+
+describe('mock adapter invariants', () => {
+  it('never claims to touch the real service', () => {
+    const { ctx } = makeContext();
+    expect(() => assertMockNeverClaimsReal(ctx.adapter)).not.toThrow();
+  });
+});
 
 describe('pollOccurrenceOnce — automatic (mock) path', () => {
   it('books immediately when the preferred slot is available precisely at release', async () => {
