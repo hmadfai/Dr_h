@@ -1,7 +1,42 @@
 # Weekly Oriental Patches Automation
 
-Cursor cannot register a recurring Automation from this repository via API.
-Create the schedule once in the UI, then point it at this prompt.
+There are two complementary ways this catalog stays fresh:
+
+1. **GitHub Actions scan** (`.github/workflows/oriental-patches-scan.yml`) —
+   already wired up, runs automatically every Monday, and can be triggered
+   on demand from the **Rescan now** button in the web UI. It runs
+   `scripts/scan_sources.py`, a lightweight regex-based link scraper over a
+   short list of known vendor pages (`scripts/sources.json`), merges any new
+   links it finds, and opens a PR tagged `needs-review` for a human (or the
+   next agent run) to curate.
+2. **Cursor Automation** (optional, manual setup) — a smarter, LLM-driven
+   weekly web search that can find patches the lightweight scanner can't
+   (JS-rendered sites, search engines, new vendors). Cursor can't register
+   this on a schedule via API, so set it up once in the UI if you want it.
+
+## Option 1: Rescan now (already working)
+
+- Open the catalog and click **Rescan now** → **Open on GitHub → Run
+  workflow** (needs write access to the repo), or
+- Use the **advanced** panel to paste a GitHub token (scope: classic `repo`,
+  or fine-grained `Actions: Read and write` limited to this repo) and
+  trigger it directly from the page. The token is stored only in your
+  browser's local storage and sent only to `api.github.com`.
+- Or run it locally:
+
+  ```bash
+  cd oriental-patches
+  python3 scripts/scan_sources.py --verbose --out /tmp/candidates.json
+  python3 scripts/merge_patches.py /tmp/candidates.json
+  python3 scripts/validate_patches.py
+  ```
+
+Scanner limitations: it only reads plain HTML (no JS rendering), and a few
+sites block generic bots (Synthonia, SonicWire's search, korg.shop all 403
+or redirect-loop against it) — see the `_comment` in `sources.json`. Results
+are tagged `needs-review` / `auto-scan`; review before trusting them fully.
+
+## Option 2: Cursor Automation (optional, for deeper weekly search)
 
 ## Create the Automation
 

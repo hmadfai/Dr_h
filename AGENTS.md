@@ -12,10 +12,12 @@ Find and maintain oriental / Middle Eastern sound patches for:
 
 ### Important paths
 - Catalog data: `oriental-patches/data/patches.json`
-- Filterable UI: `oriental-patches/web/`
+- Filterable UI: `oriental-patches/web/` (includes a **Rescan now** button)
+- Lightweight scanner: `oriental-patches/scripts/scan_sources.py` + `sources.json`
 - Merge tool: `oriental-patches/scripts/merge_patches.py`
 - Validator: `oriental-patches/scripts/validate_patches.py`
-- Automation setup: `oriental-patches/AUTOMATION.md`
+- Scheduled + on-demand workflow: `.github/workflows/oriental-patches-scan.yml`
+- Automation setup (incl. optional Cursor Automation): `oriental-patches/AUTOMATION.md`
 
 ### When updating the catalog
 1. Search reputable public sources only.

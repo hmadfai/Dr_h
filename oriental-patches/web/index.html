@@ -38,6 +38,47 @@
     </header>
 
     <main id="catalog" class="catalog">
+      <section class="scan-panel" aria-label="Rescan controls">
+        <div class="scan-info">
+          <span class="scan-label">Automated scan</span>
+          <span id="scan-status-text">Checking latest run…</span>
+          <a id="scan-status-link" class="scan-link" href="#" target="_blank" rel="noopener noreferrer" hidden>View run →</a>
+        </div>
+        <button type="button" id="rescan-toggle" class="rescan-btn" aria-expanded="false" aria-controls="rescan-panel">
+          Rescan now
+        </button>
+      </section>
+
+      <div id="rescan-panel" class="rescan-panel" hidden>
+        <p>
+          Trigger <code>oriental-patches/scripts/scan_sources.py</code> on GitHub
+          Actions to pull in any new patches published since the last run.
+        </p>
+        <a id="rescan-manual-link" class="cta-small" href="#" target="_blank" rel="noopener noreferrer">
+          Open on GitHub → Run workflow
+        </a>
+        <details class="rescan-advanced">
+          <summary>Or trigger it directly from this page (needs a GitHub token)</summary>
+          <p class="hint">
+            Use a token with <code>repo</code> scope (classic) or
+            <code>Actions: Read and write</code> (fine-grained, scoped to this
+            repo). It is stored only in this browser's local storage and is
+            sent only to <code>api.github.com</code>.
+          </p>
+          <div class="token-row">
+            <input
+              type="password"
+              id="gh-token"
+              placeholder="ghp_… personal access token"
+              autocomplete="off"
+            />
+            <button type="button" id="gh-token-run">Save &amp; run</button>
+            <button type="button" id="gh-token-forget">Forget token</button>
+          </div>
+          <p id="rescan-feedback" class="hint" aria-live="polite"></p>
+        </details>
+      </div>
+
       <section class="filters" aria-label="Catalog filters">
         <div class="filter-field">
           <label for="filter-keyboard">Keyboard</label>
@@ -93,8 +134,11 @@
 
     <footer class="footer">
       <p>
-        Data lives in <code>oriental-patches/data/patches.json</code>. A weekly
-        agent searches for new oriental patches and merges updates here.
+        Data lives in <code>oriental-patches/data/patches.json</code>. A
+        scheduled GitHub Actions workflow rescans public sources every week —
+        use the <strong>Rescan now</strong> button above to run it on demand.
+        Entries tagged <strong>needs review</strong> came from an automated
+        scan and haven't been curated yet.
       </p>
     </footer>
 

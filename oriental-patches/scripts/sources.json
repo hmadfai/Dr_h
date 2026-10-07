@@ -1,0 +1,33 @@
+{
+  "_comment": "Lightweight scan sources for scripts/scan_sources.py. Only plain-HTML, non-JS, non-bot-walled pages belong here — the scanner does a simple regex link scrape, not a full browser render. Sources that 403/redirect-loop against a generic User-Agent (e.g. Synthonia, SonicWire's search, korg.shop) were tried and dropped; prefer the weekly agent prompt in AUTOMATION.md for those.",
+  "sources": [
+    {
+      "name": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "url": "https://kelfar.net/",
+      "keyboard": "Korg Kronos",
+      "keywords": [
+        "exs", "krs", "oud", "kanun", "kanoun", "qanun", "buzuq", "buzuk",
+        "baglama", "bouzouki", "arabic", "oriental", "shabi", "sha'bi",
+        "sha3bi", "middle east", "nay", "mejwiz", "omega", "world"
+      ]
+    },
+    {
+      "name": "Synthsound \u2014 Nord Stage 4 product category",
+      "url": "https://synth-sound.com/product-category/nord-stage-4/",
+      "keyboard": "Nord Stage 4",
+      "keywords": [
+        "oriental", "arabic", "middle east", "oud", "nay", "turkish",
+        "istanbul", "egypt", "persian", "ethnic"
+      ]
+    },
+    {
+      "name": "Yamaha Synth Forum \u2014 Montage ethnic sounds thread",
+      "url": "https://yamahasynth.com/community/montage-series-synthesizers/ethnic-sounds/",
+      "keyboard": "Yamaha Montage",
+      "keywords": [
+        "oriental", "arabic", "middle east", "oud", "nay", "turkish",
+        "iranian", "ethnic", "ney", "kanun", "library"
+      ]
+    }
+  ]
+}

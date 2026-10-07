@@ -1,5 +1,11 @@
 const DATA_URL = new URL("../../data/patches.json", import.meta.url);
 
+const GH_OWNER = "hmadfai";
+const GH_REPO = "Dr_h";
+const GH_WORKFLOW_FILE = "oriental-patches-scan.yml";
+const GH_API_BASE = "https://api.github.com";
+const TOKEN_STORAGE_KEY = "oriental-patches:gh-token";
+
 const state = {
   patches: [],
   sortKey: "issued_on",
@@ -17,6 +23,15 @@ const els = {
   count: document.getElementById("result-count"),
   empty: document.getElementById("empty-state"),
   updated: document.getElementById("updated-meta"),
+  scanStatusText: document.getElementById("scan-status-text"),
+  scanStatusLink: document.getElementById("scan-status-link"),
+  rescanToggle: document.getElementById("rescan-toggle"),
+  rescanPanel: document.getElementById("rescan-panel"),
+  rescanManualLink: document.getElementById("rescan-manual-link"),
+  tokenInput: document.getElementById("gh-token"),
+  tokenRun: document.getElementById("gh-token-run"),
+  tokenForget: document.getElementById("gh-token-forget"),
+  rescanFeedback: document.getElementById("rescan-feedback"),
 };
 
 function fillSelect(select, values) {
@@ -111,12 +126,14 @@ function render() {
         ? `${patch.description.slice(0, 137)}…`
         : patch.description
       : "";
+    const needsReview = (patch.tags || []).includes("needs-review");
 
     tr.innerHTML = `
       <td>
         <div class="patch-title">
           <strong>${escapeHtml(patch.title)}</strong>
           <span>${escapeHtml(desc)}</span>
+          ${needsReview ? '<span class="needs-review-chip">Needs review</span>' : ""}
         </div>
       </td>
       <td><span class="chip chip-keyboard">${escapeHtml(patch.keyboard)}</span></td>
@@ -185,9 +202,155 @@ function bindFilters() {
   });
 }
 
+function getSavedToken() {
+  try {
+    return window.localStorage.getItem(TOKEN_STORAGE_KEY) || "";
+  } catch {
+    return "";
+  }
+}
+
+function saveToken(token) {
+  try {
+    if (token) {
+      window.localStorage.setItem(TOKEN_STORAGE_KEY, token);
+    } else {
+      window.localStorage.removeItem(TOKEN_STORAGE_KEY);
+    }
+  } catch {
+    // localStorage unavailable (private browsing etc.) — ignore.
+  }
+}
+
+function relativeTime(isoDate) {
+  const then = new Date(isoDate).getTime();
+  const diffMs = Date.now() - then;
+  const minutes = Math.round(diffMs / 60000);
+  if (minutes < 1) return "just now";
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.round(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.round(hours / 24);
+  return `${days}d ago`;
+}
+
+const RUN_STATUS_LABEL = {
+  completed_success: "succeeded",
+  completed_failure: "failed",
+  completed_cancelled: "cancelled",
+  in_progress: "running…",
+  queued: "queued…",
+};
+
+function describeRun(run) {
+  const key =
+    run.status === "completed" ? `completed_${run.conclusion}` : run.status;
+  return RUN_STATUS_LABEL[key] || run.status;
+}
+
+async function refreshScanStatus() {
+  const runsUrl = `${GH_API_BASE}/repos/${GH_OWNER}/${GH_REPO}/actions/workflows/${GH_WORKFLOW_FILE}/runs?per_page=1`;
+  try {
+    const res = await fetch(runsUrl, {
+      headers: { Accept: "application/vnd.github+json" },
+    });
+    if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+    const data = await res.json();
+    const run = data.workflow_runs && data.workflow_runs[0];
+    if (!run) {
+      els.scanStatusText.textContent =
+        "No scan has run yet — use Rescan now to start one.";
+      els.scanStatusLink.hidden = true;
+      return;
+    }
+    els.scanStatusText.textContent = `Last run ${describeRun(run)} · ${relativeTime(
+      run.created_at
+    )}`;
+    els.scanStatusLink.href = run.html_url;
+    els.scanStatusLink.hidden = false;
+  } catch {
+    els.scanStatusText.textContent =
+      "Scan status unavailable (GitHub API unreachable).";
+    els.scanStatusLink.hidden = true;
+  }
+}
+
+function setFeedback(message, isError = false) {
+  if (!els.rescanFeedback) return;
+  els.rescanFeedback.textContent = message;
+  els.rescanFeedback.style.color = isError ? "#a83a2a" : "";
+}
+
+async function triggerWorkflowDispatch(token) {
+  const dispatchUrl = `${GH_API_BASE}/repos/${GH_OWNER}/${GH_REPO}/actions/workflows/${GH_WORKFLOW_FILE}/dispatches`;
+  const res = await fetch(dispatchUrl, {
+    method: "POST",
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ref: "main" }),
+  });
+  if (res.status === 204) return { ok: true };
+  let detail = "";
+  try {
+    const body = await res.json();
+    detail = body.message || "";
+  } catch {
+    // ignore parse errors
+  }
+  return { ok: false, status: res.status, detail };
+}
+
+function bindRescanPanel() {
+  const actionsUrl = `https://github.com/${GH_OWNER}/${GH_REPO}/actions/workflows/${GH_WORKFLOW_FILE}`;
+  els.rescanManualLink.href = actionsUrl;
+
+  els.tokenInput.value = getSavedToken();
+
+  els.rescanToggle.addEventListener("click", () => {
+    const expanded = els.rescanToggle.getAttribute("aria-expanded") === "true";
+    els.rescanToggle.setAttribute("aria-expanded", String(!expanded));
+    els.rescanPanel.hidden = expanded;
+  });
+
+  els.tokenRun.addEventListener("click", async () => {
+    const token = els.tokenInput.value.trim();
+    if (!token) {
+      setFeedback("Enter a GitHub token first, or use the manual link above.", true);
+      return;
+    }
+    saveToken(token);
+    setFeedback("Triggering scan…");
+    try {
+      const result = await triggerWorkflowDispatch(token);
+      if (result.ok) {
+        setFeedback("Scan triggered! It should appear in GitHub Actions within a minute.");
+        setTimeout(refreshScanStatus, 4000);
+      } else {
+        setFeedback(
+          `Could not trigger scan (HTTP ${result.status}). ${result.detail || "Check the token's scope and repo access."}`,
+          true
+        );
+      }
+    } catch {
+      setFeedback("Network error reaching GitHub's API.", true);
+    }
+  });
+
+  els.tokenForget.addEventListener("click", () => {
+    saveToken("");
+    els.tokenInput.value = "";
+    setFeedback("Token forgotten.");
+  });
+}
+
 async function init() {
   bindSorting();
   bindFilters();
+  bindRescanPanel();
+  refreshScanStatus();
 
   const response = await fetch(DATA_URL);
   if (!response.ok) {

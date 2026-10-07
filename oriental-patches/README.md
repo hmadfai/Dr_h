@@ -26,7 +26,18 @@ python3 scripts/validate_patches.py
 python3 scripts/merge_patches.py candidates.json
 ```
 
-## Weekly automation
+## Rescan / weekly automation
 
-See [`AUTOMATION.md`](./AUTOMATION.md) for the Cursor Automation prompt and setup steps.
-A cloud agent cannot create the recurring schedule itself — activate it once at [cursor.com/automations/new](https://cursor.com/automations/new).
+A GitHub Actions workflow (`.github/workflows/oriental-patches-scan.yml`)
+already scans public sources every Monday and opens a PR with anything new.
+Click **Rescan now** in the web UI to trigger it on demand, or run it
+locally:
+
+```bash
+python3 scripts/scan_sources.py --verbose --out /tmp/candidates.json
+python3 scripts/merge_patches.py /tmp/candidates.json
+python3 scripts/validate_patches.py
+```
+
+See [`AUTOMATION.md`](./AUTOMATION.md) for details, limitations, and an
+optional Cursor Automation prompt for deeper, LLM-driven weekly search.

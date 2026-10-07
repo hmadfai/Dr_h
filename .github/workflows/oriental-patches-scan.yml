@@ -1,0 +1,93 @@
+name: Oriental Patches weekly scan
+
+on:
+  schedule:
+    # Mondays 09:00 UTC
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Why this manual rescan was triggered (shown in the run log)"
+        required: false
+        default: "Manual rescan from the web UI"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: oriental-patches-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Log trigger reason
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "Manual trigger reason: ${{ github.event.inputs.reason }}"
+
+      - name: Scan public sources for new candidates
+        working-directory: oriental-patches
+        run: |
+          python3 scripts/scan_sources.py --verbose --out /tmp/candidates.json
+          echo "candidate-count=$(python3 -c "import json;print(len(json.load(open('/tmp/candidates.json'))))")" >> "$GITHUB_OUTPUT"
+        id: scan
+
+      - name: Merge candidates into catalog
+        working-directory: oriental-patches
+        run: |
+          if [ "$(python3 -c "import json;print(len(json.load(open('/tmp/candidates.json'))))")" = "0" ]; then
+            echo "No candidates found this run."
+            exit 0
+          fi
+          python3 scripts/merge_patches.py /tmp/candidates.json
+
+      - name: Validate catalog
+        working-directory: oriental-patches
+        run: python3 scripts/validate_patches.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet -- oriental-patches/data/patches.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open pull request with new findings
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(oriental-patches): weekly scan ${{ github.run_id }}"
+          branch: automation/oriental-patches-scan
+          delete-branch: true
+          title: "chore(oriental-patches): weekly scan found new candidates"
+          body: |
+            Automated weekly scan of configured public sources
+            (`oriental-patches/scripts/sources.json`) found new candidate
+            patches that aren't in the catalog yet.
+
+            **These are unreviewed candidates** (tagged `needs-review` /
+            `auto-scan` in the data). Before merging:
+
+            - Confirm each entry is actually oriental / Middle Eastern
+              patch content, not a general-purpose library.
+            - Fill in `subtype`, `issued_on`, `price`, and a real
+              `description` where possible.
+            - Remove anything irrelevant or duplicate.
+
+            Trigger: `${{ github.event_name }}`
+          add-paths: |
+            oriental-patches/data/patches.json
