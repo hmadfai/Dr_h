@@ -13,6 +13,8 @@ userdata/
 *.sqlite-shm
 diagnostics/
 *.local.json
+.web-preview-data/
+web-preview/dist/
 
 # Editors
 .vscode/

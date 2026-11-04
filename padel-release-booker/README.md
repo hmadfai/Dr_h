@@ -65,6 +65,21 @@ the Electron app pointed at it. Requires a graphical macOS session (this
 cannot run headless — there is no supported way to drive the real UI without
 a display).
 
+### Browser preview (Mock sandbox only)
+
+For reviewing the UI without a Mac display, a thin HTTP/SSE bridge runs the
+**same** AppRuntime + mock adapter + SQLite behind the real React UI:
+
+```bash
+npm run preview          # builds web-preview/dist and serves on :4173
+# or: npm run preview:build && npm run preview:serve
+```
+
+Open `http://localhost:4173`. This is **not** the packaged macOS `.app` —
+Tray, Keychain, and native notifications are unavailable — and it never
+touches live Playtomic. Sample club URL for the wizard:
+`https://playtomic.com/clubs/fictional-riverside-padel-club`.
+
 ## Tests
 
 ```bash

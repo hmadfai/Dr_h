@@ -20,7 +20,10 @@
     "build:unpack": "npm run build && electron-builder --dir",
     "build:mac": "npm run rebuild:native && npm run build && electron-builder --mac",
     "rebuild:native": "electron-rebuild -f -w better-sqlite3",
-    "rebuild:node": "npm rebuild better-sqlite3"
+    "rebuild:node": "npm rebuild better-sqlite3",
+    "preview:build": "vite build --config web-preview/vite.config.ts",
+    "preview:serve": "tsx web-preview/server.ts",
+    "preview": "npm run preview:build && npm run preview:serve"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",
@@ -44,6 +47,7 @@
     "jsdom": "^29.0.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
     "typescript": "~5.9.3",
     "vite": "^7.3.7",
     "vitest": "^5.0.3"
