@@ -5,6 +5,7 @@ Weekly-updated catalog of oriental / Middle Eastern sound patches for:
 - **Korg Kronos**
 - **Nord Stage 4**
 - **Yamaha Montage**
+- **Moog Muse**
 
 ## Browse
 

@@ -1,10 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-28T00:00:00Z",
+  "updated_at": "2026-11-09T17:32:37Z",
   "keyboards": [
     "Korg Kronos",
     "Nord Stage 4",
-    "Yamaha Montage"
+    "Yamaha Montage",
+    "Moog Muse"
   ],
   "subtypes": [
     "Classical Arabic",
@@ -19,74 +20,112 @@
   ],
   "patches": [
     {
-      "id": "kelfar-exs170-maestro",
-      "title": "EXs 170 Kelfar Maestro",
-      "keyboard": "Korg Kronos",
-      "subtype": "Classical Arabic",
-      "issued_on": "2016-01-01",
-      "vendor": "Kelfar Technologies",
-      "price": "$250",
-      "url": "https://kelfar.net/exs-170-kelfar-maestro/",
-      "description": "Classical Arabic instruments for Kronos: Oud, Kanun, Buzuk, Nay, Kawala, Mejwiz, Arghool, Violin, and String Ensemble (~1.4GB PCM, 40 Programs, 32 Combinations).",
-      "source": "kelfar.net",
-      "found_on": "2026-07-28",
-      "tags": ["oud", "kanun", "nay", "arabic", "mediterranean"]
+      "id": "anton-anru-echoes-of-machines",
+      "title": "Echoes of Machines",
+      "keyboard": "Moog Muse",
+      "subtype": "Preset Pack",
+      "issued_on": "2026-04-16",
+      "vendor": "Anton Anru",
+      "price": "$24.95",
+      "url": "https://antonanru.sellfy.store/p/muse-echoes/",
+      "description": "64 retro cinematic ambient presets: 19 keys, 9 leads, 5 pads, 9 strings, 12 synths, 4 drones, and 6 textures. Requires firmware 1.4 or higher. Also sold inside a 256-preset Muse bundle.",
+      "source": "antonanru.sellfy.store",
+      "found_on": "2026-11-09",
+      "tags": [
+        "ambient",
+        "cinematic",
+        "retro"
+      ]
     },
     {
-      "id": "kelfar-exs95-melodia",
-      "title": "EXs 95 Kelfar Melodia",
-      "keyboard": "Korg Kronos",
-      "subtype": "Ethnic / World",
-      "issued_on": "2014-01-01",
-      "vendor": "Kelfar Technologies",
-      "price": "$249.99",
-      "url": "https://kelfar.net/exs-95-kelfar-melodia/",
-      "description": "East-meets-West library with Middle Eastern instruments (Zourna, Kanon, Oud, Arabic Guitars, Nay, Bouzoki) plus Western sounds. ~614MB PCM, 256 Programs.",
-      "source": "kelfar.net",
-      "found_on": "2026-07-28",
-      "tags": ["melodia", "shaabi", "arabic", "turkish", "greek"]
+      "id": "moog-muse-memorymoog-collection",
+      "title": "Memorymoog Preset Collection",
+      "keyboard": "Moog Muse",
+      "subtype": "Preset Pack",
+      "issued_on": "2026-02-21",
+      "vendor": "Moog Music",
+      "price": "Free",
+      "url": "https://www.moogmusic.com/the-wave/new-memorymoog-preset-collection-for-muse-owners/",
+      "description": "Free collection by Eric Frampton recreating all 100 Memorymoog factory presets for Muse, plus a B-timbre version of each that uses velocity, aftertouch, the macro knob, effects, and extra modulation.",
+      "source": "moogmusic.com / synthanatomy.com",
+      "found_on": "2026-11-09",
+      "tags": [
+        "free",
+        "memorymoog",
+        "official"
+      ]
     },
     {
-      "id": "kelfar-exs171-shabi",
-      "title": "EXs 171 Kelfar Sha'bi",
-      "keyboard": "Korg Kronos",
-      "subtype": "Sha'bi / Dance",
-      "issued_on": "2016-01-01",
-      "vendor": "Kelfar Technologies / KORG",
-      "price": null,
-      "url": "https://korg.shop/sound-libraries/kronos-nautilus/exs171.html",
-      "description": "Sha'bi / dabka-oriented oriental library using physical modeling: rababa, shebbabeh, nay, mejwiz, mizmar, bakhira, yarghul, zamr, plus guitars and layered club sounds.",
-      "source": "korg.shop",
-      "found_on": "2026-07-28",
-      "tags": ["shaabi", "dabka", "physical-modeling", "club"]
+      "id": "luftrum-32-moog-muse",
+      "title": "Luftrum 32 — Moog Muse Patches",
+      "keyboard": "Moog Muse",
+      "subtype": "Preset Pack",
+      "issued_on": "2025-08-21",
+      "vendor": "Luftrum",
+      "price": "$29",
+      "url": "https://www.luftrum.com/moog-muse-patches/",
+      "description": "64 handcrafted patches (firmware v1.4.0) spanning 80s synth pop, ambient, synthwave, Berlin School, and dub techno, plus 12 sequences. Mod wheel, aftertouch, and macro knob are assigned.",
+      "source": "luftrum.com",
+      "found_on": "2026-11-09",
+      "tags": [
+        "ambient",
+        "cinematic",
+        "synthwave"
+      ]
     },
     {
-      "id": "kelfar-krs95-moda",
-      "title": "KRS 95 Kelfar Moda",
-      "keyboard": "Korg Kronos",
-      "subtype": "Sha'bi / Dance",
-      "issued_on": "2018-01-01",
-      "vendor": "Kelfar Technologies",
-      "price": null,
-      "url": "https://kelfar.net/krs-95-kelfar-moda/",
-      "description": "Companion KRS library for EXs95 Melodia focused on Sha'abi dance music. 128 programs with modeled Middle Eastern winds and leads (requires EXs95).",
-      "source": "kelfar.net",
-      "found_on": "2026-07-28",
-      "tags": ["shaabi", "krs", "melodia-companion"]
+      "id": "jexus-moog-muse-soundset",
+      "title": "Jexus Moog Muse Soundset",
+      "keyboard": "Moog Muse",
+      "subtype": "Preset Pack",
+      "issued_on": "2025-02-19",
+      "vendor": "Jexus / Sounds for Synths",
+      "price": "$37.90",
+      "url": "https://sounds-for-synths.com/moog-muse/",
+      "description": "200+ dual-timbre presets (300+ unique timbres) in .mmp format for firmware 1.3 or later, from a Muse factory sound designer. Includes adjusted versions of some factory presets as a bonus.",
+      "source": "sounds-for-synths.com",
+      "found_on": "2026-11-09",
+      "tags": [
+        "jexus",
+        "mmp",
+        "third-party"
+      ]
     },
     {
-      "id": "kelfar-exs250-club-strings",
-      "title": "EXs 250 Kelfar Club Strings",
-      "keyboard": "Korg Kronos",
-      "subtype": "Strings",
-      "issued_on": "2024-07-04",
-      "vendor": "Kelfar Technologies",
-      "price": "$199.99",
-      "url": "https://kelfar.net/exs-250-club-strings/",
-      "description": "World strings designed for Arabic, Turkish, Balkan, and Greek music with portamento legato; also covers contemporary club/EDM string roles.",
-      "source": "kelfar.net / korg.com news",
-      "found_on": "2026-07-28",
-      "tags": ["strings", "arabic", "turkish", "balkan", "2024"]
+      "id": "limbic-bits-luna-moog-muse",
+      "title": "Luna Sound Pack",
+      "keyboard": "Moog Muse",
+      "subtype": "Preset Pack",
+      "issued_on": "2024-09-23",
+      "vendor": "Limbic Bits",
+      "price": "€24",
+      "url": "https://limbicbits.com/products/moog-muse-presets-luna-sound-pack",
+      "description": "64 bi-timbral presets for dub and melodic techno, ambient, and electronica: 23 pads and textures, 6 basses, 9 leads, 8 arpeggiator sounds, 6 dub chords, and 12 combos, plus 18 demo sequences.",
+      "source": "limbicbits.com",
+      "found_on": "2026-11-09",
+      "tags": [
+        "ambient",
+        "electronica",
+        "techno"
+      ]
+    },
+    {
+      "id": "moog-muse-factory-collection",
+      "title": "Muse Factory Collection Pack",
+      "keyboard": "Moog Muse",
+      "subtype": "Factory / Stock",
+      "issued_on": "2024-07-31",
+      "vendor": "Moog Music",
+      "price": "Included",
+      "url": "https://www.moogmusic.com/downloads/?product=Muse",
+      "description": "Factory preset collection that ships with the Moog Muse, released with the instrument on 31 July 2024. Free re-download from Moog's Muse downloads page.",
+      "source": "moogmusic.com",
+      "found_on": "2026-11-09",
+      "tags": [
+        "factory",
+        "muse",
+        "official"
+      ]
     },
     {
       "id": "kelfar-exs252-omega-kanun",
@@ -100,63 +139,32 @@
       "description": "Physically modeled and hybrid Kanun library for NAUTILUS/KRONOS (~1.27GB PCM, 64 Programs, 46 Combinations).",
       "source": "kelfar.net / korg.com news",
       "found_on": "2026-07-28",
-      "tags": ["kanun", "qanun", "physical-modeling", "2024"]
+      "tags": [
+        "kanun",
+        "qanun",
+        "physical-modeling",
+        "2024"
+      ]
     },
     {
-      "id": "synthsound-oriental-pack-ns4",
-      "title": "Oriental Pack (Oriental Essence)",
-      "keyboard": "Nord Stage 4",
-      "subtype": "Preset Pack",
-      "issued_on": null,
-      "vendor": "Synthsound",
-      "price": "$20.00",
-      "url": "https://synth-sound.com/product/oriental-pack-2",
-      "description": "Nord Stage 4 preset pack with oriental/Arabic-flavored sounds including Nay, Istanbul layers, Arabic mixes, Uduk solo, and Arabic Night drums.",
-      "source": "synth-sound.com",
+      "id": "kelfar-exs250-club-strings",
+      "title": "EXs 250 Kelfar Club Strings",
+      "keyboard": "Korg Kronos",
+      "subtype": "Strings",
+      "issued_on": "2024-07-04",
+      "vendor": "Kelfar Technologies",
+      "price": "$199.99",
+      "url": "https://kelfar.net/exs-250-club-strings/",
+      "description": "World strings designed for Arabic, Turkish, Balkan, and Greek music with portamento legato; also covers contemporary club/EDM string roles.",
+      "source": "kelfar.net / korg.com news",
       "found_on": "2026-07-28",
-      "tags": ["nord", "presets", "nay", "arabic", "istanbul"]
-    },
-    {
-      "id": "synthonia-ns4-ultimate-v4-ethnic",
-      "title": "27 Ultimate Sounds V4 (ethnic accents)",
-      "keyboard": "Nord Stage 4",
-      "subtype": "Ethnic / World",
-      "issued_on": null,
-      "vendor": "Synthonia / ADL",
-      "price": null,
-      "url": "https://www.synthonia.com/marketplace/nord-stage-4-27-ultimate-sounds-v4-detail",
-      "description": "General Nord Stage 4 soundset that includes ethnic-leaning patches such as Modern Sitar, Pure Santur, Pure Dulcimer, and hybrid world textures useful for oriental arrangements.",
-      "source": "synthonia.com",
-      "found_on": "2026-07-28",
-      "tags": ["santur", "sitar", "dulcimer", "ethnic"]
-    },
-    {
-      "id": "yamaha-montage-factory-ethnic",
-      "title": "Montage factory ethnic / world performances",
-      "keyboard": "Yamaha Montage",
-      "subtype": "Factory / Stock",
-      "issued_on": "2016-05-01",
-      "vendor": "Yamaha",
-      "price": "Included",
-      "url": "https://usa.yamaha.com/products/music_production/synthesizers/montage/index.html",
-      "description": "Stock Montage waveform set includes regional ethnic kits and world parts (including Middle East–oriented drum sets). Melodic Arabic/Turkish/Iranian voice depth is limited versus arranger expansions.",
-      "source": "yamahasynth.com community / Yamaha docs",
-      "found_on": "2026-07-28",
-      "tags": ["factory", "ethnic", "percussion"]
-    },
-    {
-      "id": "yamaha-motif-xf-compatible-note",
-      "title": "Motif XF / MOXF libraries (Montage-compatible path)",
-      "keyboard": "Yamaha Montage",
-      "subtype": "Ethnic / World",
-      "issued_on": null,
-      "vendor": "Third-party (Motif XF format)",
-      "price": "Varies",
-      "url": "https://usa.yamaha.com/products/music_production/synthesizers/montage/compatibility.html",
-      "description": "Montage can import Motif XF/MOXF user voices and waveforms (.X3A/.X3V/.X3W). Primary practical path for third-party oriental content until native Montage Arabic packs appear.",
-      "source": "Yamaha compatibility docs",
-      "found_on": "2026-07-28",
-      "tags": ["motif-xf", "compatibility", "x3a", "third-party"]
+      "tags": [
+        "strings",
+        "arabic",
+        "turkish",
+        "balkan",
+        "2024"
+      ]
     },
     {
       "id": "yamahasynth-ethnic-sounds-thread",
@@ -170,7 +178,240 @@
       "description": "Ongoing community discussion noting weak dedicated Arabic/Turkish/Iranian melodic libraries for Montage; PSR/Genos oriental expansion packs are not loadable on Montage.",
       "source": "yamahasynth.com",
       "found_on": "2026-07-28",
-      "tags": ["community", "wishlist", "arabic", "turkish"]
+      "tags": [
+        "community",
+        "wishlist",
+        "arabic",
+        "turkish"
+      ]
+    },
+    {
+      "id": "kelfar-krs95-moda",
+      "title": "KRS 95 Kelfar Moda",
+      "keyboard": "Korg Kronos",
+      "subtype": "Sha'bi / Dance",
+      "issued_on": "2018-01-01",
+      "vendor": "Kelfar Technologies",
+      "price": null,
+      "url": "https://kelfar.net/krs-95-kelfar-moda/",
+      "description": "Companion KRS library for EXs95 Melodia focused on Sha'abi dance music. 128 programs with modeled Middle Eastern winds and leads (requires EXs95).",
+      "source": "kelfar.net",
+      "found_on": "2026-07-28",
+      "tags": [
+        "shaabi",
+        "krs",
+        "melodia-companion"
+      ]
+    },
+    {
+      "id": "yamaha-montage-factory-ethnic",
+      "title": "Montage factory ethnic / world performances",
+      "keyboard": "Yamaha Montage",
+      "subtype": "Factory / Stock",
+      "issued_on": "2016-05-01",
+      "vendor": "Yamaha",
+      "price": "Included",
+      "url": "https://usa.yamaha.com/products/music_production/synthesizers/montage/index.html",
+      "description": "Stock Montage waveform set includes regional ethnic kits and world parts (including Middle East–oriented drum sets). Melodic Arabic/Turkish/Iranian voice depth is limited versus arranger expansions.",
+      "source": "yamahasynth.com community / Yamaha docs",
+      "found_on": "2026-07-28",
+      "tags": [
+        "factory",
+        "ethnic",
+        "percussion"
+      ]
+    },
+    {
+      "id": "kelfar-exs171-shabi",
+      "title": "EXs 171 Kelfar Sha'bi",
+      "keyboard": "Korg Kronos",
+      "subtype": "Sha'bi / Dance",
+      "issued_on": "2016-01-01",
+      "vendor": "Kelfar Technologies / KORG",
+      "price": null,
+      "url": "https://korg.shop/sound-libraries/kronos-nautilus/exs171.html",
+      "description": "Sha'bi / dabka-oriented oriental library using physical modeling: rababa, shebbabeh, nay, mejwiz, mizmar, bakhira, yarghul, zamr, plus guitars and layered club sounds.",
+      "source": "korg.shop",
+      "found_on": "2026-07-28",
+      "tags": [
+        "shaabi",
+        "dabka",
+        "physical-modeling",
+        "club"
+      ]
+    },
+    {
+      "id": "kelfar-exs170-maestro",
+      "title": "EXs 170 Kelfar Maestro",
+      "keyboard": "Korg Kronos",
+      "subtype": "Classical Arabic",
+      "issued_on": "2016-01-01",
+      "vendor": "Kelfar Technologies",
+      "price": "$250",
+      "url": "https://kelfar.net/exs-170-kelfar-maestro/",
+      "description": "Classical Arabic instruments for Kronos: Oud, Kanun, Buzuk, Nay, Kawala, Mejwiz, Arghool, Violin, and String Ensemble (~1.4GB PCM, 40 Programs, 32 Combinations).",
+      "source": "kelfar.net",
+      "found_on": "2026-07-28",
+      "tags": [
+        "oud",
+        "kanun",
+        "nay",
+        "arabic",
+        "mediterranean"
+      ]
+    },
+    {
+      "id": "kelfar-exs95-melodia",
+      "title": "EXs 95 Kelfar Melodia",
+      "keyboard": "Korg Kronos",
+      "subtype": "Ethnic / World",
+      "issued_on": "2014-01-01",
+      "vendor": "Kelfar Technologies",
+      "price": "$249.99",
+      "url": "https://kelfar.net/exs-95-kelfar-melodia/",
+      "description": "East-meets-West library with Middle Eastern instruments (Zourna, Kanon, Oud, Arabic Guitars, Nay, Bouzoki) plus Western sounds. ~614MB PCM, 256 Programs.",
+      "source": "kelfar.net",
+      "found_on": "2026-07-28",
+      "tags": [
+        "melodia",
+        "shaabi",
+        "arabic",
+        "turkish",
+        "greek"
+      ]
+    },
+    {
+      "id": "yamaha-motif-xf-compatible-note",
+      "title": "Motif XF / MOXF libraries (Montage-compatible path)",
+      "keyboard": "Yamaha Montage",
+      "subtype": "Ethnic / World",
+      "issued_on": null,
+      "vendor": "Third-party (Motif XF format)",
+      "price": "Varies",
+      "url": "https://usa.yamaha.com/products/music_production/synthesizers/montage/compatibility.html",
+      "description": "Montage can import Motif XF/MOXF user voices and waveforms (.X3A/.X3V/.X3W). Primary practical path for third-party oriental content until native Montage Arabic packs appear.",
+      "source": "Yamaha compatibility docs",
+      "found_on": "2026-07-28",
+      "tags": [
+        "motif-xf",
+        "compatibility",
+        "x3a",
+        "third-party"
+      ]
+    },
+    {
+      "id": "synthsound-oriental-pack-ns4",
+      "title": "Oriental Pack (Oriental Essence)",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": "$20.00",
+      "url": "https://synth-sound.com/product/oriental-pack-2",
+      "description": "Nord Stage 4 preset pack with oriental/Arabic-flavored sounds including Nay, Istanbul layers, Arabic mixes, Uduk solo, and Arabic Night drums.",
+      "source": "synth-sound.com",
+      "found_on": "2026-07-28",
+      "tags": [
+        "nord",
+        "presets",
+        "nay",
+        "arabic",
+        "istanbul"
+      ]
+    },
+    {
+      "id": "synthonia-ns4-ultimate-v4-ethnic",
+      "title": "27 Ultimate Sounds V4 (ethnic accents)",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Ethnic / World",
+      "issued_on": null,
+      "vendor": "Synthonia / ADL",
+      "price": null,
+      "url": "https://www.synthonia.com/marketplace/nord-stage-4-27-ultimate-sounds-v4-detail",
+      "description": "General Nord Stage 4 soundset that includes ethnic-leaning patches such as Modern Sitar, Pure Santur, Pure Dulcimer, and hybrid world textures useful for oriental arrangements.",
+      "source": "synthonia.com",
+      "found_on": "2026-07-28",
+      "tags": [
+        "santur",
+        "sitar",
+        "dulcimer",
+        "ethnic"
+      ]
+    },
+    {
+      "id": "moog-muse-launch-expansion",
+      "title": "Muse Launch Expansion Pack",
+      "keyboard": "Moog Muse",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "Moog Music",
+      "price": null,
+      "url": "https://www.moogmusic.com/downloads/?product=Muse&type=Patch",
+      "description": "Official follow-up preset pack listed on Moog's Muse patch downloads, covering additional pads, leads, and basses beyond the factory collection. Exact issue date was not published on the download page.",
+      "source": "moogmusic.com",
+      "found_on": "2026-11-09",
+      "tags": [
+        "expansion",
+        "muse",
+        "official"
+      ]
+    },
+    {
+      "id": "kelfar-exs255-omega-greek-bouzouki",
+      "title": "EXs 255 Omega Greek Bouzouki",
+      "keyboard": "Korg Kronos",
+      "subtype": "Ethnic / World",
+      "issued_on": null,
+      "vendor": "Kelfar Technologies",
+      "price": "$149.99",
+      "url": "https://kelfar.net/exs-255-omega-greek-bouzouki/",
+      "description": "Omega Greek Bouzouki library for NAUTILUS/KRONOS with upstrokes, downstrokes, glides, tremolo, glissandi, and staccato articulations. List price $149.99, with a $99.99 special noted on the product page.",
+      "source": "kelfar.net",
+      "found_on": "2026-11-09",
+      "tags": [
+        "bouzouki",
+        "greek",
+        "omega",
+        "world"
+      ]
+    },
+    {
+      "id": "kelfar-exs254-omega-buzuq",
+      "title": "EXs 254 Omega Buzuq",
+      "keyboard": "Korg Kronos",
+      "subtype": "Ethnic / World",
+      "issued_on": null,
+      "vendor": "Kelfar Technologies",
+      "price": "$99.99",
+      "url": "https://kelfar.net/exs-254-omega-buzuq/",
+      "description": "Buzuq library with traditional acoustic buzuq and an acoustic buzuq with pickup, aimed at Mediterranean and Middle Eastern repertoire.",
+      "source": "kelfar.net",
+      "found_on": "2026-11-09",
+      "tags": [
+        "acoustic",
+        "buzuk",
+        "buzuq",
+        "omega"
+      ]
+    },
+    {
+      "id": "kelfar-exs253-omega-baglama",
+      "title": "EXs 253 Omega Baglama",
+      "keyboard": "Korg Kronos",
+      "subtype": "Ethnic / World",
+      "issued_on": null,
+      "vendor": "Kelfar Technologies",
+      "price": "$149.99",
+      "url": "https://kelfar.net/exs-253-omega-baglama/",
+      "description": "Acoustic and electric baglama (saz) for Central Asian and Mediterranean music, including local microtonal tuning varieties.",
+      "source": "kelfar.net",
+      "found_on": "2026-11-09",
+      "tags": [
+        "baglama",
+        "microtonal",
+        "omega",
+        "saz"
+      ]
     }
   ]
 }

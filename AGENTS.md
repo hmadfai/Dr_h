@@ -10,6 +10,8 @@ Find and maintain oriental / Middle Eastern sound patches for:
 - Nord Stage 4
 - Yamaha Montage
 
+Also keep Moog Muse preset packs in the same catalog (official downloads and third-party soundsets). Filter them with keyboard `Moog Muse`.
+
 ### Important paths
 - Catalog data: `oriental-patches/data/patches.json`
 - Filterable UI: `oriental-patches/web/` (includes a **Rescan now** button)

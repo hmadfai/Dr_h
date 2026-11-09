@@ -52,19 +52,22 @@ are tagged `needs-review` / `auto-scan`; review before trusting them fully.
 You maintain the Oriental Patches catalog in this repository.
 
 ## Goal
-Every run, search the public web for new or updated oriental / Middle Eastern / Arabic / Turkish / Persian sound patches, libraries, and preset packs for these keyboards only:
-- Korg Kronos (and NAUTILUS libraries that also target Kronos)
-- Nord Stage 4
-- Yamaha Montage (including Motif XF/MOXF libraries that Montage can load)
+Every run, search the public web for new or updated sound patches for these keyboards only:
+- Korg Kronos (and NAUTILUS libraries that also target Kronos) — oriental / Middle Eastern / Arabic / Turkish / Persian
+- Nord Stage 4 — same oriental focus
+- Yamaha Montage (including Motif XF/MOXF libraries that Montage can load) — same oriental focus
+- Moog Muse — official and third-party preset packs (not limited to oriental styles)
 
 ## Where to look
 Search vendor shops, manufacturer news, and reputable marketplaces. Prioritize:
 - kelfar.net, korg.shop, korg.com news
 - norduserforum.com, synth-sound.com, synthonia.com and other Nord Stage 4 preset sellers
 - yamahasynth.com, yamaha.com Montage/Motif compatibility pages, Montage/MODX library vendors
+- moogmusic.com/downloads (product=Muse), luftrum.com, limbicbits.com, sounds-for-synths.com, antonanru.sellfy.store
 - Google/Bing queries like:
   "Kronos Arabic library", "Kronos Sha'bi", "Nord Stage 4 oriental pack",
-  "Montage Middle Eastern library", "Motif XF Arabic X3A"
+  "Montage Middle Eastern library", "Motif XF Arabic X3A",
+  "Moog Muse preset pack", "Moog Muse soundset"
 
 ## Data rules
 1. Read `oriental-patches/data/patches.json` first.
