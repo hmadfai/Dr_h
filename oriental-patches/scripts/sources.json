@@ -1,0 +1,45 @@
+{
+  "_comment": "Pages the weekly scanner can read as plain HTML. include_all accepts every on-page link that matches path_regex, for any musical style. path_regex keeps nav, carts, and section indexes out. Sites that 403 or render only in JavaScript are left to the agent prompt in AUTOMATION.md.",
+  "sources": [
+    {
+      "name": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "url": "https://kelfar.net/",
+      "keyboard": "Korg Kronos",
+      "include_all": true,
+      "path_regex": "/(exs-|krs-?)\\d"
+    },
+    {
+      "name": "Synthsound — Nord Stage 4 presets",
+      "url": "https://synth-sound.com/product-category/nord-stage-4/",
+      "keyboard": "Nord Stage 4",
+      "vendor": "Synthsound",
+      "include_all": true,
+      "path_regex": "/product/[^/]+/?$",
+      "path_excludes": ["product-category"]
+    },
+    {
+      "name": "Nord Sound Libraries for Stage 4",
+      "url": "https://www.nordkeyboards.com/sounds/?selected_product=20",
+      "keyboard": "Nord Stage 4",
+      "vendor": "Nord",
+      "price": "Free",
+      "include_all": true,
+      "path_regex": "/sounds/(piano-library|sample-library|sound-collections|signature-sound-banks)/[^/?]+/"
+    },
+    {
+      "name": "Luftrum — Moog Muse patches",
+      "url": "https://www.luftrum.com/moog-muse-patches/",
+      "keyboard": "Moog Muse",
+      "vendor": "Luftrum",
+      "keywords": ["muse", "luftrum", "preset", "patch", "soundset"]
+    },
+    {
+      "name": "Yamaha Montage sound library page",
+      "url": "https://usa.yamaha.com/musical-instruments/keyboards/explore/montage-sound-library.html",
+      "keyboard": "Yamaha Montage",
+      "vendor": "Yamaha",
+      "include_all": true,
+      "path_regex": "yamahamusicsoft\\.com/(catalog|synth)|shop\\.usa\\.yamaha\\.com/en/chick"
+    }
+  ]
+}
