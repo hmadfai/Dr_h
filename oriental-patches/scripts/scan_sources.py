@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rescan configured public sources for candidate oriental patches.
+"""Rescan configured public sources for candidate patches of any style.
 
 This is a lightweight, dependency-free scanner: it fetches each page in
 ``sources.json``, pulls out links whose text or URL matches one of that
@@ -18,6 +18,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 import sys
@@ -30,10 +31,10 @@ from urllib.parse import urljoin, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES_PATH = ROOT / "scripts" / "sources.json"
 DATA_PATH = ROOT / "data" / "patches.json"
-DEFAULT_SUBTYPE = "Ethnic / World"
+DEFAULT_SUBTYPE = "Preset Pack"
 REQUEST_TIMEOUT = 20
 USER_AGENT = (
-    "Mozilla/5.0 (compatible; OrientalPatchesBot/1.0; "
+    "Mozilla/5.0 (compatible; KeyboardPatchesBot/1.0; "
     "+https://github.com/hmadfai/Dr_h)"
 )
 
@@ -72,8 +73,7 @@ def fetch(url: str, verbose: bool) -> str | None:
 
 def clean_text(html_fragment: str) -> str:
     text = TAG_RE.sub(" ", html_fragment)
-    text = text.replace("&amp;", "&").replace("&nbsp;", " ")
-    text = text.replace("&#8217;", "'").replace("&#039;", "'")
+    text = html.unescape(text).replace("\xa0", " ")
     return re.sub(r"\s+", " ", text).strip()
 
 
@@ -110,6 +110,55 @@ GENERIC_LABELS = {
     "permalink", "share", "print",
 }
 SKIP_URL_FRAGMENTS = ("type=rss", "/rss", "feed=rss", ".rss", "/feed")
+
+
+def guess_subtype(title: str, url: str) -> str:
+    """Pick a catalog subtype from the link title and URL. Order matters."""
+    blob = f"{title} {url}".lower()
+    rules = (
+        (("sha'bi", "shabi", "sha3bi", "dabka"), "Sha'bi / Dance"),
+        (("kanun", "qanun", "kanoun"), "Kanun"),
+        (("oud", "nay", "ney", "buzuq", "buzuk", "baglama", "bouzouki", "saz", "kithara", "oriental", "arabic", "maqam"), "Ethnic / World"),
+        (("guitar", "ukulele"), "Guitar"),
+        (("violin", "string", "cello"), "Strings"),
+        (("organ",), "Organ"),
+        (("piano", "rhodes", "clav", "keys", "ep9", "grand", "bosendorfer", "bösendorfer", "mark v"), "Keys"),
+        (("sax", "brass", "horn", "trumpet", "trombone"), "Brass"),
+        (("drum", "percussion"), "Percussion"),
+        (("christmas", "gospel", "shape of you", "birds of a feather", "levitating", "cold heart", "dua lipa", "stay", "uptown", "up town", "billie", "sheeran", "bieber"), "Pop / Cover"),
+        (("cinematic", "ambient", "lo-fi", "lofi", "soundtrack"), "Cinematic"),
+        (("factory",), "Factory / Stock"),
+        (("synth", "lead", "bass", "analog", "arp"), "Synth"),
+    )
+    for words, subtype in rules:
+        if any(word in blob for word in words):
+            return subtype
+    return DEFAULT_SUBTYPE
+
+
+def display_title(text: str, url: str) -> str:
+    """Prefer the link label, but fall back to the URL slug when the label is a whole paragraph."""
+    if text and len(text) <= 90:
+        return text
+    slug = urlparse(url).path.rstrip("/").split("/")[-1]
+    slug = re.sub(r"[-_]+", " ", slug).strip()
+    if not slug:
+        return (text or "Untitled")[:90]
+    return " ".join(word.capitalize() for word in slug.split())
+
+
+def link_allowed(source: dict, url: str, text: str) -> bool:
+    if text.strip().lower() in GENERIC_LABELS:
+        return False
+    path_regex = source.get("path_regex")
+    if path_regex and not re.search(path_regex, url, re.IGNORECASE):
+        return False
+    for fragment in source.get("path_excludes") or []:
+        if fragment.lower() in url.lower():
+            return False
+    if source.get("include_all"):
+        return True
+    return matches_keywords(url, text, source.get("keywords") or [])
 
 
 def matches_keywords(url: str, text: str, keywords: list[str]) -> bool:
@@ -152,7 +201,7 @@ def scan(sources: list[dict], verbose: bool) -> list[dict]:
         name = source["name"]
         url = source["url"]
         keyboard = source["keyboard"]
-        keywords = source.get("keywords", [])
+        vendor_name = source.get("vendor")
         log(f"Scanning {name} ({url})", verbose)
 
         html = fetch(url, verbose)
@@ -171,20 +220,21 @@ def scan(sources: list[dict], verbose: bool) -> list[dict]:
                 continue
             if not link_text or len(link_text) < 3:
                 continue
-            if not matches_keywords(link_url, link_text, keywords):
+            if not link_allowed(source, link_url, link_text):
                 continue
 
+            title = display_title(link_text, link_url)
             seen_in_run.add(link_url)
             hits += 1
             candidates.append(
                 {
-                    "id": slugify(link_text, link_url),
-                    "title": link_text[:120],
+                    "id": slugify(title, link_url),
+                    "title": title[:120],
                     "keyboard": keyboard,
-                    "subtype": DEFAULT_SUBTYPE,
+                    "subtype": guess_subtype(title, link_url),
                     "issued_on": None,
-                    "vendor": vendor_from_url(link_url),
-                    "price": None,
+                    "vendor": vendor_name or vendor_from_url(link_url),
+                    "price": source.get("price"),
                     "url": link_url,
                     "description": (
                         f"Auto-detected by weekly scan on {name}. "

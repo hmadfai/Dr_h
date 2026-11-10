@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-09T17:32:37Z",
+  "updated_at": "2026-11-10T14:37:30Z",
   "keyboards": [
     "Korg Kronos",
     "Nord Stage 4",
@@ -16,7 +16,14 @@
     "Percussion",
     "Preset Pack",
     "Ethnic / World",
-    "Factory / Stock"
+    "Factory / Stock",
+    "Keys",
+    "Organ",
+    "Guitar",
+    "Synth",
+    "Brass",
+    "Pop / Cover",
+    "Cinematic"
   ],
   "patches": [
     {
@@ -300,6 +307,150 @@
       ]
     },
     {
+      "id": "get-montage-expanded-here",
+      "title": "Montage Expanded",
+      "keyboard": "Yamaha Montage",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "Yamaha",
+      "price": null,
+      "url": "https://www.yamahamusicsoft.com/synth/montage-expanded",
+      "description": "Montage Expanded for the Yamaha Montage.",
+      "source": "Yamaha Montage sound library page",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "get-chick-s-mark-v-for-montage-here",
+      "title": "Chick's Mark V",
+      "keyboard": "Yamaha Montage",
+      "subtype": "Keys",
+      "issued_on": null,
+      "vendor": "Yamaha",
+      "price": null,
+      "url": "https://shop.usa.yamaha.com/en/chick-s-mark-v-montage.html",
+      "description": "Chick's Mark V for the Yamaha Montage.",
+      "source": "Yamaha Montage sound library page",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "get-the-b-sendorfer-imperial-290-for-montage-here",
+      "title": "Bösendorfer Imperial 290",
+      "keyboard": "Yamaha Montage",
+      "subtype": "Keys",
+      "issued_on": null,
+      "vendor": "Yamaha",
+      "price": null,
+      "url": "https://www.yamahamusicsoft.com/catalog/product/view/id/138437",
+      "description": "Bösendorfer Imperial 290 for the Yamaha Montage.",
+      "source": "Yamaha Montage sound library page",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "up-town-funk",
+      "title": "Up Town Funk",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Pop / Cover",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/up-town-funk",
+      "description": "Up Town Funk for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "ukulele",
+      "title": "UKULELE",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Guitar",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/ukulele",
+      "description": "UKULELE for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "the-kid-laroi-justin-bieber-stay",
+      "title": "The Kid LAROI, Justin Bieber – STAY",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Pop / Cover",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/the-kid-laroi-justin-bieber-stay",
+      "description": "The Kid LAROI, Justin Bieber – STAY for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "supreme-horns",
+      "title": "Supreme Horns",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Brass",
+      "issued_on": null,
+      "vendor": "Nord",
+      "price": "Free",
+      "url": "https://www.nordkeyboards.com/sounds/sound-collections/supreme-horns/?selected_product=20",
+      "description": "Supreme Horns for the Nord Stage 4. Free for Nord owners through Nord Sound Manager.",
+      "source": "Nord Sound Libraries for Stage 4",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "spitfire-string-quintet",
+      "title": "Spitfire String Quintet",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Strings",
+      "issued_on": null,
+      "vendor": "Nord",
+      "price": "Free",
+      "url": "https://www.nordkeyboards.com/sounds/sound-collections/spitfire-string-quintet/?selected_product=20",
+      "description": "Spitfire String Quintet for the Nord Stage 4. Free for Nord owners through Nord Sound Manager.",
+      "source": "Nord Sound Libraries for Stage 4",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "soft-grand",
+      "title": "Soft Grand",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Keys",
+      "issued_on": null,
+      "vendor": "Nord",
+      "price": "Free",
+      "url": "https://www.nordkeyboards.com/sounds/piano-library/soft-grand/?selected_product=20",
+      "description": "Soft Grand for the Nord Stage 4. Free for Nord owners through Nord Sound Manager.",
+      "source": "Nord Sound Libraries for Stage 4",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
       "id": "synthsound-oriental-pack-ns4",
       "title": "Oriental Pack (Oriental Essence)",
       "keyboard": "Nord Stage 4",
@@ -317,6 +468,294 @@
         "nay",
         "arabic",
         "istanbul"
+      ]
+    },
+    {
+      "id": "mr-klynik-stage-4-sound-bank",
+      "title": "Mr Klynik Stage 4 Sound Bank",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "Nord",
+      "price": "Free",
+      "url": "https://www.nordkeyboards.com/sounds/signature-sound-banks/mr-klynik-stage-4-sound-bank/?selected_product=20",
+      "description": "Mr Klynik Stage 4 Sound Bank for the Nord Stage 4. Free for Nord owners through Nord Sound Manager.",
+      "source": "Nord Sound Libraries for Stage 4",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "modern-gospel-nord-stage-4",
+      "title": "Modern Gospel Nord Stage 4",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Pop / Cover",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/modern-gospel-nord-stage-4",
+      "description": "Modern Gospel Nord Stage 4 for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "mega-brass",
+      "title": "Mega Brass",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Brass",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/mega-brass-2",
+      "description": "Mega Brass for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "lo-fi-collection",
+      "title": "Lo-Fi Collection",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Cinematic",
+      "issued_on": null,
+      "vendor": "Nord",
+      "price": "Free",
+      "url": "https://www.nordkeyboards.com/sounds/sound-collections/lo-fi-collection/?selected_product=20",
+      "description": "Lo-Fi Collection for the Nord Stage 4. Free for Nord owners through Nord Sound Manager.",
+      "source": "Nord Sound Libraries for Stage 4",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "laura-voice",
+      "title": "Laura Voice",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/laura-voice",
+      "description": "Laura Voice for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "korg-gold-era-sound-pack",
+      "title": "KORG “GOLD ERA” |SOUND PACK|",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Synth",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/korg-gold-era-sound-pack",
+      "description": "KORG “GOLD ERA” |SOUND PACK| for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "hard-lead",
+      "title": "HARD LEAD",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Synth",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/hard-lead",
+      "description": "HARD LEAD for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "guitar-pack-vol-1",
+      "title": "GUITAR PACK VOL. 1",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Guitar",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/guitar-pack-vol-1",
+      "description": "GUITAR PACK VOL. 1 for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "ep9-stockholm",
+      "title": "EP9 Stockholm",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Keys",
+      "issued_on": null,
+      "vendor": "Nord",
+      "price": "Free",
+      "url": "https://www.nordkeyboards.com/sounds/piano-library/ep9-stockholm/?selected_product=20",
+      "description": "EP9 Stockholm for the Nord Stage 4. Free for Nord owners through Nord Sound Manager.",
+      "source": "Nord Sound Libraries for Stage 4",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "ed-sheeran-shape-of-you-nord-stage-4",
+      "title": "Ed Sheeran “Shape of you” NORD STAGE 4",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Pop / Cover",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/ed-sheeran-shape-of-you-nord-stage-4",
+      "description": "Ed Sheeran “Shape of you” NORD STAGE 4 for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "dua-lipa-levitating-featuring-dababy-nord-stage-4",
+      "title": "Dua Lipa – Levitating Featuring DaBaby NORD STAGE 4",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Pop / Cover",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/dua-lipa-levitating-featuring-dababy-nord-stage-4",
+      "description": "Dua Lipa – Levitating Featuring DaBaby NORD STAGE 4 for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "danny-lopez-signature-sound-bank",
+      "title": "Danny Lopez Signature Sound Bank",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "Nord",
+      "price": "Free",
+      "url": "https://www.nordkeyboards.com/sounds/signature-sound-banks/danny-lopez-signature-sound-bank/?selected_product=20",
+      "description": "Danny Lopez Signature Sound Bank for the Nord Stage 4. Free for Nord owners through Nord Sound Manager.",
+      "source": "Nord Sound Libraries for Stage 4",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "cold-heart-dua-lipa-elton-john",
+      "title": "COLD HEART-DUA LIPA & ELTON JOHN",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Pop / Cover",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/cold-heart-dua-lipa-elton-john",
+      "description": "COLD HEART-DUA LIPA & ELTON JOHN for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "christmas-pack",
+      "title": "CHRISTMAS PACK",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Pop / Cover",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/christmas-pack",
+      "description": "CHRISTMAS PACK for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "c-64-pack-retro-game-sounds",
+      "title": "C 64 PACK- Retro Game Sounds",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Synth",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/c-64-pack-retro-game-sounds",
+      "description": "C 64 PACK- Retro Game Sounds for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "brandon-coleman-stage-4-sound-bank",
+      "title": "Brandon Coleman Stage 4 Sound Bank",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "Nord",
+      "price": "Free",
+      "url": "https://www.nordkeyboards.com/sounds/signature-sound-banks/brandon-coleman-stage-4-sound-bank/?selected_product=20",
+      "description": "Brandon Coleman Stage 4 Sound Bank for the Nord Stage 4. Free for Nord owners through Nord Sound Manager.",
+      "source": "Nord Sound Libraries for Stage 4",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "billie-eilish-birds-of-a-feather-nord-stage-4",
+      "title": "Billie Eilish – “BIRDS OF A FEATHER” NORD STAGE 4",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Pop / Cover",
+      "issued_on": null,
+      "vendor": "Synthsound",
+      "price": null,
+      "url": "https://synth-sound.com/product/billie-eilish-birds-of-a-feather-nord-stage-4-copy",
+      "description": "Billie Eilish – “BIRDS OF A FEATHER” NORD STAGE 4 for the Nord Stage 4.",
+      "source": "Synthsound — Nord Stage 4 presets",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "astoria-grand",
+      "title": "Astoria Grand",
+      "keyboard": "Nord Stage 4",
+      "subtype": "Keys",
+      "issued_on": null,
+      "vendor": "Nord",
+      "price": "Free",
+      "url": "https://www.nordkeyboards.com/sounds/piano-library/astoria-grand/?selected_product=20",
+      "description": "Astoria Grand for the Nord Stage 4. Free for Nord owners through Nord Sound Manager.",
+      "source": "Nord Sound Libraries for Stage 4",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
       ]
     },
     {
@@ -354,6 +793,118 @@
         "expansion",
         "muse",
         "official"
+      ]
+    },
+    {
+      "id": "krs99-maestro-ultimate",
+      "title": "KRS99 Maestro Ultimate",
+      "keyboard": "Korg Kronos",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/krs99-maestro-ultimate/",
+      "description": "KRS99 Maestro Ultimate for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "krs98-mosaic",
+      "title": "KRS98 Mosaic",
+      "keyboard": "Korg Kronos",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/krs98-mosaic/",
+      "description": "KRS98 Mosaic for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "krs-97-kelfar-acustica",
+      "title": "KRS 97 Kelfar Acustica",
+      "keyboard": "Korg Kronos",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/krs-97-kelfar-acustica/",
+      "description": "KRS 97 Kelfar Acustica for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "krs-96-kelfar-sofia",
+      "title": "KRS 96 Kelfar Sofia",
+      "keyboard": "Korg Kronos",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/krs-96-kelfar-sofia/",
+      "description": "KRS 96 Kelfar Sofia for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "exs-185-accordion-master",
+      "title": "EXs-185 Accordion Master",
+      "keyboard": "Korg Kronos",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/exs-185-accordion-master/",
+      "description": "EXs-185 Accordion Master for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "exs-96-kelfar-monomusica",
+      "title": "EXs 96 Kelfar Monomusica",
+      "keyboard": "Korg Kronos",
+      "subtype": "Preset Pack",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/exs-96-kelfar-monomusica/",
+      "description": "EXs 96 Kelfar Monomusica for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "exs-256-pure-guitar-magic",
+      "title": "EXs 256 Pure Guitar Magic",
+      "keyboard": "Korg Kronos",
+      "subtype": "Guitar",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/exs-256-pure-guitar-magic/",
+      "description": "EXs 256 Pure Guitar Magic for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
       ]
     },
     {
@@ -411,6 +962,118 @@
         "microtonal",
         "omega",
         "saz"
+      ]
+    },
+    {
+      "id": "exs-251-solo-violin",
+      "title": "EXs 251 Solo Violin",
+      "keyboard": "Korg Kronos",
+      "subtype": "Strings",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/exs-251-solo-violin/",
+      "description": "EXs 251 Solo Violin for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "exs-189-dynasax",
+      "title": "EXs 189 DynaSax",
+      "keyboard": "Korg Kronos",
+      "subtype": "Brass",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/exs-189-dynasax/",
+      "description": "EXs 189 DynaSax for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "exs-188-kelfar-expressive-strings",
+      "title": "EXs 188 Kelfar Expressive Strings",
+      "keyboard": "Korg Kronos",
+      "subtype": "Strings",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/exs-188-kelfar-expressive-strings/",
+      "description": "EXs 188 Kelfar Expressive Strings for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "exs-187-vintage-analog-dynamics",
+      "title": "EXs 187 Vintage Analog Dynamics",
+      "keyboard": "Korg Kronos",
+      "subtype": "Synth",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/exs-187-vintage-analog-dynamics/",
+      "description": "EXs 187 Vintage Analog Dynamics for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "exs-186-vintage-organs-synths",
+      "title": "EXs 186 Vintage Organs & Synths",
+      "keyboard": "Korg Kronos",
+      "subtype": "Organ",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/exs-186-vintage-organs-synths/",
+      "description": "EXs 186 Vintage Organs & Synths for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "exs-174-master-percussionist",
+      "title": "EXs 174 Master Percussionist",
+      "keyboard": "Korg Kronos",
+      "subtype": "Percussion",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/exs-174-master-percussionist/",
+      "description": "EXs 174 Master Percussionist for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
+      ]
+    },
+    {
+      "id": "exs-172-173-kelfar-kithara",
+      "title": "EXs 172 & 173 Kelfar Kithara",
+      "keyboard": "Korg Kronos",
+      "subtype": "Ethnic / World",
+      "issued_on": null,
+      "vendor": "kelfar.net",
+      "price": null,
+      "url": "https://kelfar.net/exs-172-173-kelfar-kithara/",
+      "description": "EXs 172 & 173 Kelfar Kithara for the Korg Kronos.",
+      "source": "Kelfar Technologies (Kronos / NAUTILUS)",
+      "found_on": "2026-11-10",
+      "tags": [
+        "catalog"
       ]
     }
   ]

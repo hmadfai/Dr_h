@@ -1,8 +1,8 @@
 # Dr_h
 
-## Oriental Patches
+## Keyboard Patches
 
-Living catalog of oriental / Middle Eastern keyboard patches for **Korg Kronos**, **Nord Stage 4**, and **Yamaha Montage**, plus **Moog Muse** preset packs.
+Living catalog of sound libraries and preset packs — every style, not only oriental — for **Korg Kronos**, **Nord Stage 4**, **Yamaha Montage**, and **Moog Muse**.
 
 - Browse UI: [`oriental-patches/web/`](oriental-patches/web/)
 - Catalog data: [`oriental-patches/data/patches.json`](oriental-patches/data/patches.json)

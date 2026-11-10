@@ -1,16 +1,17 @@
 # AGENTS.md
 
-## Oriental Patches weekly agent
+## Keyboard Patches weekly agent
 
-This repository contains an **Oriental Patches** catalog under `oriental-patches/`.
+This repository contains a patch catalog under `oriental-patches/` (the folder name is historical).
 
 ### Purpose
-Find and maintain oriental / Middle Eastern sound patches for:
+Find and maintain sound libraries and preset packs of every style for:
 - Korg Kronos
 - Nord Stage 4
 - Yamaha Montage
+- Moog Muse
 
-Also keep Moog Muse preset packs in the same catalog (official downloads and third-party soundsets). Filter them with keyboard `Moog Muse`.
+Oriental and Middle Eastern libraries stay in the catalog. They are one subtype group, not the whole catalog. Filter them with subtype, and filter any instrument with keyboard.
 
 ### Important paths
 - Catalog data: `oriental-patches/data/patches.json`

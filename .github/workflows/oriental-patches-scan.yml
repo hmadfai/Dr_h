@@ -82,8 +82,9 @@ jobs:
             **These are unreviewed candidates** (tagged `needs-review` /
             `auto-scan` in the data). Before merging:
 
-            - Confirm each entry is actually oriental / Middle Eastern
-              patch content, not a general-purpose library.
+            - Confirm each entry is a real patch or sample library for
+              Kronos, Nord Stage 4, Montage, or Moog Muse. Any musical
+              style is in scope.
             - Fill in `subtype`, `issued_on`, `price`, and a real
               `description` where possible.
             - Remove anything irrelevant or duplicate.

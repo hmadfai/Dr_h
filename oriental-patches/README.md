@@ -1,6 +1,6 @@
-# Oriental Patches
+# Keyboard Patches
 
-Weekly-updated catalog of oriental / Middle Eastern sound patches for:
+Weekly-updated catalog of sound libraries and preset packs, in every style, for:
 
 - **Korg Kronos**
 - **Nord Stage 4**
